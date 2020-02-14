@@ -22,9 +22,6 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
 
 with open('GRIB2LocalTable.csv') as cf:
     greader = csv.DictReader(cf)
-    #for row in greader:
-    #    print(row)
-
 
     if not os.path.exists('GRIB2'):
         os.mkdir('GRIB2')
