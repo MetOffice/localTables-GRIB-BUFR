@@ -23,7 +23,7 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
 root_path = os.path.dirname(__file__)
 with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
     greader = csv.DictReader(cf)
-    ttlpath = os.path.join(root_path, 'grib', 'grib2', 'mo--74')
+    ttlpath = os.path.join(root_path, 'mo--74')
     if not os.path.exists(ttlpath):
         os.mkdir(ttlpath)
     for entity in greader:
