@@ -23,13 +23,15 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
 root_path = os.path.dirname(__file__)
 with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
     greader = csv.DictReader(cf)
-
-    if not os.path.exists('mo--74'):
-        os.mkdir('mo--74')
+    ttlpath = os.path.join(root_path, 'grib', 'grib2', 'mo--74')
+    if not os.path.exists(ttlpath):
+        os.mkdir(ttlpath)
     for entity in greader:
-        with open('mo--74/{d}-{c}-{n}.ttl'.format(d=entity['Discipline'],
-                                                 c=entity['Category'],
-                                                 n=entity['Number']), 'w') as fh:
+        fpath = os.path.join(ttlpath,
+                             '{d}-{c}-{n}.ttl'.format(d=entity['Discipline'],
+                                                      c=entity['Category'],
+                                                      n=entity['Number'])
+        with open(fpath, 'w') as fh:
             fh.write(conceptTemplate.format(d=entity['Discipline'],
                                             c=entity['Category'],
                                             n=entity['Number'],
