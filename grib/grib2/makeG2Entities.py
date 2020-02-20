@@ -30,7 +30,7 @@ with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
         fpath = os.path.join(ttlpath,
                              '{d}-{c}-{n}.ttl'.format(d=entity['Discipline'],
                                                       c=entity['Category'],
-                                                      n=entity['Number'])
+                                                      n=entity['Number']))
         with open(fpath, 'w') as fh:
             fh.write(conceptTemplate.format(d=entity['Discipline'],
                                             c=entity['Category'],
