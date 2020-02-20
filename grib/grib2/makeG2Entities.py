@@ -31,7 +31,7 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
 
 root_path = os.path.dirname(__file__)
 
-with open(os.path.join(root_path, 'mo--74.ttl')) as csf:
+with open(os.path.join(root_path, 'mo--74.ttl'), 'w') as csf:
     csf.write(conceptSchemeTp)
 
 with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
