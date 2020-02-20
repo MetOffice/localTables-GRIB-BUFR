@@ -21,7 +21,7 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
                    '\tskos:related <http://reference.metoffice.gov.uk/um/stash/m01s{ss}i{si}>')
 
 root_path = os.path.dirname(__file__)
-with open(os.path.join([root_path, 'GRIB2LocalTable.csv'])) as cf:
+with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
     greader = csv.DictReader(cf)
 
     if not os.path.exists('mo--74'):
