@@ -1,0 +1,112 @@
+VALUE,PARAMETER,UNITS,ABBREV.,MetO8
+128, Wet-bulb potential temperature     ,K, ,22
+129, PV on theta surface, , ,195
+130, Fog Fraction at 1.5m,,,10
+131, Snow probability    ,dimensionless,,27
+132, Surface moisture flux over IREST t/s   ,kg/m**2 = mm/timeslice,,30
+133, Wind mixing    , W/m**2,,31
+134, Net solar radiation flux top (8888) or bottom (9999) ,W/m**2,,34
+135, Net IR at top (8888) or bottom (9999)      ,W/m**2,,35
+136, Surface wind stress - U     ,N/m**2,,36
+137, Surface wind stress - V     ,N/m**2,,37
+138,Fog Fraction at 1.5m for DPDS,,,10
+139,Accumulated dynamic rain,kg/m**2,,61
+140,Accumulated convective rain ,kg/m**2,,62
+143,Rate of dynamic rainfall,kg/m**2/s,,63
+144,Rate of convective rainfall,kg/m**2/s,,64
+145,Convective local rate of precipitation,kg/m**2,,67
+146,Rate of dynamic snowfall,kg/m**2/s,,68
+147,Rate of convective snowfall,kg/m**2/s,,69
+148,Orography,m,,73
+149,Maximum wind gust at 10 metres(dpds),m/s,,367(Aug 7th 2007)
+150,Present Weather Code,WMO code,,303
+151,Ht lowest cloud base > 2.5 okta,kft,,163
+152,Wet bulb freezing level height ASL,m,,206
+153, Convective cloud base    ,Pa,,84
+154, Convective cloud top     ,Pa,,85
+155, Duct height     ,m,,89
+156, Duct intensity (max. wavelength)     ,m,,90
+157, Sea surface temperature     ,K,,91
+158, Evap-from-sea*leads/frac (amnt),kg/m**2/s,,125
+159, Sea-Ice cover            ,Fraction,,134
+160, -20 C isotherm pressure     ,Pa,,41
+161, -20 C isotherm ICAO height    ,kft,,42
+162, Freezing level ICAO height    ,kft,,43
+163, Contrail lower limit     ,kft,,44
+164, Contrail upper limit kft,kft,,45
+165, Freezing-level pressure    ,Pa,,59
+166, -20DegC Isotherm True Ht     ,m,,29
+167,D-factors,m,,902
+168,WAFC Mean Icing Potential,Index number,,345
+169,WAFC Max. Icing Potential,Index number,,346
+170,WAFC Mean In-cloud Turbulence Potential ,Index number,,347
+171,WAFC Max. In-cloud Turbulence Potential,Index number,,348
+172,WAFC Mean CAT Potential ,Index number,,349
+173,WAFC Max. CAT Potential ,Index number,,350
+174,WAFC CB Horizontal Extent ,Index number,,351
+175,WAFC Pressure at CB Base,Pa,,352
+176,WAFC Pressure at CB Top ,Pa,,353
+177,WAFC Pressure at Embedded CB Base ,Pa,,354
+178,WAFC Pressure at Embedded CB Top ,Pa,,355
+179,WAFC ICAO Height at CB Base ,m,,356
+180,WAFC ICAO Height at CB Top ,m,,357
+181,WAFC ICAO Height at Embedded CB Base,m,,358
+182,WAFC ICAO Height at Embedded CB Top,m,,359
+188,SST - Dewpoint Difference(Helen Davis),K,,
+189,Max Gust,m/s,,367
+190,Max CAT Level,Pa,,25
+191,Max Wind Altitude,kft,,48
+192,Max Wind Base,kft,,334
+193,Max Wind Top,kft,,335
+194,Tropopause Altitude,kft,,49
+195,Convective Cloud Depth,Pa,, 
+196,Convective Cloud Base Height,kft,,87
+197,Convective Cloud Top Height,kft,,88
+198,Prob. Vis Less Than 1km,%,,
+199,Prob. Vis Less Than 5km,%,,
+200,Ertel Pontential Vorticity,Kkm2/kg/s,,
+201,UV Index Number,Index number,,
+202,Height Lowest Cloud Base,kft,,161-168
+203,Precipitation Type,non-dim,,
+204,Direct flux (downward shortwave radiation),W/m2,,410
+205,Diffuse flux (downward shortwave radiation),W/m2,,411
+206,Lightning Rate (Helen Davis),strikes/minute,,
+207,Cloud Fraction Below 1000ft ASL,,,93
+208,MINUS 70C Isotherm true height,m,,473
+209,MINUS 70C Isotherm pressure,hPa,,474
+210,MINUS 70C Isotherm ICAO height,kft,,475
+211,surface dust concentration,kg/kg,,381
+212,dust concentration 2000ft - 5000ft,kg/kg,,382
+213,mineral dust optical depth,,,434
+214,Ht lowest cloud base > 4.5 okta,kft,,165
+215,VOL SMC AT WILTING AFTER T/STEP (neon), ,,491
+216,VOL SMC AT CRIT PT AFTER T/STEP (Neon), ,,492
+217,VOL SMC AT SATURATION AFTER T/S (Neon),,,493
+218,SAT SOIL CONDUCTIVITY AFTER T/S (Neon),,,494
+219,THERMAL CAPACITY AFTER T/STEP(Neon),,,495
+220,THERMAL CONDUCTIVITY AFTER T/S(Neon),,,496
+221,SATURATED SOIL WATER SUCTION(Neon),,,497
+222,"CLAPP-HORNBERGER ""B"" COEFF (Neon)",,,498
+223,Canopy water near surface,kg/m2,,
+224,Total Elevation (Tide and Surge),m,,310
+225,Density - sea water,kg/m3,,360
+226,Density - small sediment,g/m3,,361
+227,Density - large sediment,g/m3,,362
+228,Wave peak period (wave model),s,,116
+229,Surge height,m,,108
+230,Surge current speed,m/s,,148
+231,Surge current direction,Deg,,149
+232,Tide water level,m,,150
+233,Tide current speed,m/s,,151
+234,Tide current direction,Deg,,152
+235,SNOW-FREE ALBEDO OF SOIL(Neon),,,499
+236,Leaf Area Index (neon),,,490
+237,Secondary swell height,m,,482
+238,Secondary swell period,s,,483
+239,Secondary swell direction,degrees true,,484
+240,Half peak to Trough, ,,209
+241,Silhouette orographic Roughness, ,,210
+242,Visibility at 1.5m incl precipitation and dust, ,,528
+243,Visibility in Dust only at 1.5m,,,529
+244,Prob visibility less than 5km,,,216
+245,(Ocean Depth),m,, 
