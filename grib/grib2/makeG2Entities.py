@@ -4,7 +4,7 @@ import os
 conceptSchemeTp = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
                    '@prefix dct: <http://purl.org/dc/terms/> . \n'
                    '@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\n\n'
-                   '<mo--74> a skos:ConceptScheme \n'
+                   '<mo--74> a skos:ConceptScheme ;\n'
                    '\trdfs:label "Met Office Local Table definitions"@en ;\n'
                    '\tdct:description "Met Office Local Table definitions '
                    'Extending WMO GRIB2 code table 4.2 for cases where the '
