@@ -25,7 +25,7 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
                    '\t<http://codes.wmo.int/def/grib2/category> ;\n'
                    '\t<http://codes.wmo.int/def/common/centre> <http://codes.wmo.int/common/centre/74> ;\n'
                    '\t<http://codes.wmo.int/def/common/edition> <http://codes.wmo.int/codeform/grib2> ;\n'
-                   '\t<http://codes.wmo.int/def/common/unit> "{u}" ;\n'
+                   '{u}'
                    '\t<http://codes.wmo.int/def/grib2/category> <http://codes.wmo.int/grib2/codeflag/4.1/{d}-{c}> ;\n'
                    '\t<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/{d}> ;\n'
                    '\t<http://codes.wmo.int/def/grib2/parameter> {n} ;\n'
@@ -48,6 +48,11 @@ with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
                                                       c=entity['Category'],
                                                       n=entity['Number']))
         with open(fpath, 'w') as fh:
+            # unit is not fully populated yet
+            ustr = ''
+            if entity['Unit']:
+                ustr = '\t<http://codes.wmo.int/def/common/unit> "{}" ;\n'
+                ustr = ustr.format(entity['Unit'])
             fh.write(conceptTemplate.format(d=entity['Discipline'],
                                             c=entity['Category'],
                                             n=entity['Number'],
