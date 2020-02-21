@@ -23,4 +23,4 @@ jobs:
         pip install requests
     - name: Test
       run: |
-        python3 -m check_urls.py
+        python3 -m check_urls
