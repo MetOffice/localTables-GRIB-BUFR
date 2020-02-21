@@ -1,4 +1,4 @@
-name: check consistency
+name: check_consistency
 
 on: [push, pull_request]
 
