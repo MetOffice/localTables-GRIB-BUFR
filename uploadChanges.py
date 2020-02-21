@@ -37,8 +37,8 @@ def parse_uploads(uploads):
 
 def post(session, url, payload):
     headers={'Content-type':'text/turtle'}
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
+    response = session.get(url, headers=headers)
+    if response.status_code != 200:
         raise ValueError('Cannot POST to {}, it exists.'.format(url))
     params = {'status':'Experimental'}
     res = session.post(url, headers=headers, data=payload, params=params)
@@ -47,7 +47,7 @@ def post(session, url, payload):
 
 def put(session, url, payload):
     headers={'Content-type':'text/turtle'}
-    response = requests.get(url, headers=headers)
+    response = session.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
     res = session.post(url, headers=headers, data=payload)
@@ -56,7 +56,10 @@ def post_uploads(session, rootURL, uploads):
     for postfile in uploads:
         with open('.{}'.format(postfile), 'r') as pf:
             pdata = pf.read()
-        url = '{}{}'.format(rootURL, postfile.rstrip('.ttl'))
+        # post, so remove last part of identity, this is in the payload
+        relID = postfile.rstrip('.ttl')
+        relID = '/'.join(postfile.split('/')[:-1])
+        url = '{}{}'.format(rootURL, relID)
         print(url)
         post(session, url, pdata)
 
