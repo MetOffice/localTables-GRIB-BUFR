@@ -57,6 +57,6 @@ with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
                                             c=entity['Category'],
                                             n=entity['Number'],
                                             label=entity['Parameter'],
-                                            u=entity['Unit'],
+                                            u=ustr,
                                             ss=int(int(entity['STASH code'])/1000),
                                             si=int(entity['STASH code'])%1000))
