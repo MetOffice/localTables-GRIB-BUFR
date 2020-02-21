@@ -3,6 +3,8 @@ import os
 
 conceptSchemeTp = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
                    '@prefix dct: <http://purl.org/dc/terms/> . \n'
+                   '@prefix ldp:   <http://www.w3.org/ns/ldp#> .\n'
+                   '@prefix reg:   <http://purl.org/linked-data/registry#> .\n'
                    '@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\n\n'
                    '<mo--74> a reg:Register , skos:ConceptScheme , ldp:Container  ;\n'
                    '\tldp:isMemberOfRelation skos:inScheme ;\n'
