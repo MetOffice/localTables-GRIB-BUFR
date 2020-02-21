@@ -4,6 +4,7 @@ import json
 import unittest
 
 import rdflib
+import rdflib.compare
 import requests
 
 """
@@ -64,6 +65,34 @@ for f in glob.glob('**/*.ttl', recursive=True):
         return entity_exists
     tname = 'test_exists_{}'.format(relf.replace('/', '_'))
     setattr(TestContentsConsistency, tname, make_a_test(f))
+
+    def make_another_test(infile):
+        identityURI = copy.copy(identity)
+        def entity_consistent(self):
+            regr = requests.get(identityURI)
+            ufile = '{}.ttl'.format(identityURI.split(rooturl)[1].lstrip('/'))
+            assert(regr.status_code == 200)
+            headers={'Accept':'text/turtle'}
+            expected = requests.get(identityURI, headers=headers)
+            expected_rdfgraph = rdflib.Graph()
+            expected_rdfgraph.parse(data=expected.text, format='n3')
+            #print(expected)
+            result_rdfgraph = rdflib.Graph()
+            print(identityURI)
+            result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
+            #import pdb; pdb.set_trace()
+            self.check_result(result_rdfgraph, expected_rdfgraph)
+            #msg = ('')
+            #self.assertEqual(regr.status_code, 200, msg)
+        return entity_consistent
+
+    # skip uncheckable content, e.g. container registers
+    print(f)
+    if f in ['grib/grib2/mo--74.ttl']:
+        continue
+
+    tname = 'test_consistent_{}'.format(relf.replace('/', '_'))
+    setattr(TestContentsConsistency, tname, make_another_test(f))
 
 
 if __name__ == '__main__':
