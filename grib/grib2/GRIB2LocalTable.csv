@@ -3,7 +3,7 @@ STASH code,Parameter,Unit,Discipline,Category,Number
 9210,height of lowest cloud base greater than 2.5 oktas ,kft,0,6,192
 20058,surface dust concentration ,g/m3,0,13,192
 20059,dust concentration 2000 - 5000 ft  ,g/m3,0,13,192
-6071,2nd swell period,,10,0,193
+6071,2nd swell period,s,10,0,193
 6073,2nd swell direction,,10,0,194
 6070,2nd swell height,,10,0,195
 6074,2nd swell mean directional spread,,10,0,196
