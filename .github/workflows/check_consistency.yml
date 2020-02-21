@@ -1,6 +1,6 @@
 name: check_consistency
 
-on: [push, pull_request]
+on: push
 
 jobs:
   build:
