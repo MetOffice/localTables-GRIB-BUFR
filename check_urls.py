@@ -76,14 +76,11 @@ for f in glob.glob('**/*.ttl', recursive=True):
             expected = requests.get(identityURI, headers=headers)
             expected_rdfgraph = rdflib.Graph()
             expected_rdfgraph.parse(data=expected.text, format='n3')
-            #print(expected)
+            # print(expected)
             result_rdfgraph = rdflib.Graph()
-            print(identityURI)
+            # print(identityURI)
             result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
-            #import pdb; pdb.set_trace()
             self.check_result(result_rdfgraph, expected_rdfgraph)
-            #msg = ('')
-            #self.assertEqual(regr.status_code, 200, msg)
         return entity_consistent
 
     # skip uncheckable content, e.g. container registers
@@ -96,7 +93,6 @@ for f in glob.glob('**/*.ttl', recursive=True):
 
 
 if __name__ == '__main__':
-    # unittest.main()
     try:
         unittest.main()
     except Exception as e:

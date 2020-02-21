@@ -1,6 +1,9 @@
 name: check_consistency
 
-on: push
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   build:
