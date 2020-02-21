@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install rdflib
+  - pip install requests
+script:
+  python3 -m checkurls.py
