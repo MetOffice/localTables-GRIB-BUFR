@@ -32,31 +32,35 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
                    '\tskos:related <http://reference.metoffice.gov.uk/um/stash/m01s{ss}i{si}> ;\n'
                    '\t.\n')
 
-root_path = os.path.dirname(__file__)
+def main():
+    root_path = os.path.dirname(__file__)
 
-with open(os.path.join(root_path, 'mo--74.ttl'), 'w') as csf:
-    csf.write(conceptSchemeTp)
+    with open(os.path.join(root_path, 'mo--74.ttl'), 'w') as csf:
+        csf.write(conceptSchemeTp)
 
-with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
-    greader = csv.DictReader(cf)
-    ttlpath = os.path.join(root_path, 'mo--74')
-    if not os.path.exists(ttlpath):
-        os.mkdir(ttlpath)
-    for entity in greader:
-        fpath = os.path.join(ttlpath,
-                             '{d}-{c}-{n}.ttl'.format(d=entity['Discipline'],
-                                                      c=entity['Category'],
-                                                      n=entity['Number']))
-        with open(fpath, 'w') as fh:
-            # unit is not fully populated yet
-            ustr = ''
-            if entity['Unit']:
-                ustr = '\t<http://codes.wmo.int/def/common/unit> "{}" ;\n'
-                ustr = ustr.format(entity['Unit'])
-            fh.write(conceptTemplate.format(d=entity['Discipline'],
-                                            c=entity['Category'],
-                                            n=entity['Number'],
-                                            label=entity['Parameter'],
-                                            u=ustr,
-                                            ss=int(int(entity['STASH code'])/1000),
-                                            si=int(entity['STASH code'])%1000))
+    with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
+        greader = csv.DictReader(cf)
+        ttlpath = os.path.join(root_path, 'mo--74')
+        if not os.path.exists(ttlpath):
+            os.mkdir(ttlpath)
+        for entity in greader:
+            fpath = os.path.join(ttlpath,
+                                 '{d}-{c}-{n}.ttl'.format(d=entity['Discipline'],
+                                                          c=entity['Category'],
+                                                          n=entity['Number']))
+            with open(fpath, 'w') as fh:
+                # unit is not fully populated yet
+                ustr = ''
+                if entity['Unit']:
+                    ustr = '\t<http://codes.wmo.int/def/common/unit> "{}" ;\n'
+                    ustr = ustr.format(entity['Unit'])
+                fh.write(conceptTemplate.format(d=entity['Discipline'],
+                                                c=entity['Category'],
+                                                n=entity['Number'],
+                                                label=entity['Parameter'],
+                                                u=ustr,
+                                                ss=int(int(entity['STASH code'])/1000),
+                                                si=int(entity['STASH code'])%1000))
+
+if __name__ == '__main__':
+    main()

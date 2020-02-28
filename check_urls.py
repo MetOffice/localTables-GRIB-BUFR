@@ -7,6 +7,8 @@ import rdflib
 import rdflib.compare
 import requests
 
+import grib.grib2.makeG2Entities as makeG2
+
 """
 This test script evaluates all folder which contain a file of name
 'regurl'
@@ -99,6 +101,7 @@ for f in glob.glob('**/*.ttl', recursive=True):
 
 
 if __name__ == '__main__':
+    makeG2.main()
     try:
         unittest.main()
     except Exception as e:
