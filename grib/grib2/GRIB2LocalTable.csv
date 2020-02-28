@@ -7,7 +7,7 @@ STASH code,Parameter,Unit,Discipline,Category,Number
 6073,2nd swell direction,,10,0,194
 6070,2nd swell height,,10,0,195
 6074,2nd swell mean directional spread,,10,0,196
-6081,3rd swell period,,10,0,197
+6081,3rd swell period,m,10,0,197
 6083,3rd swell direction,,10,0,198
 6080,3rd swell height,,10,0,199
 6084,3rd swell mean directional spread,,10,0,200
