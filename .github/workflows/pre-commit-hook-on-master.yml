@@ -37,6 +37,10 @@ jobs:
           git config --global user.email 'mark.hedley@metoffice.gov.uk'
           git add grib/grib2/mo--74.ttl
           git add grib/grib2/mo--74/*
-          git commit -am 'Github Action Commit'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push
+          if [ -z "$(git status --porcelain)" ]; 
+              then echo 'nothing to commit'
+          else 
+              git commit -am 'Github Action Commit'
+              git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+              git push
+          fi
