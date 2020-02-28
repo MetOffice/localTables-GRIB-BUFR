@@ -1,6 +1,6 @@
 name: check_consistency
 
-on: push
+on: pull_request
 
 jobs:
   build:
@@ -21,6 +21,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install rdflib
         pip install requests
+    - name: build
+      run: |
+        python grib/grib2/makeG2Entities.py
     - name: Test
       run: |
         python3 -m check_urls

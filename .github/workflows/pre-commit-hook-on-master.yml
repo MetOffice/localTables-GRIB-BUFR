@@ -1,6 +1,11 @@
 name: pre-commit
 
-on: pull_request
+on:
+  # Trigger the workflow on push
+  # but only for the master branch
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -24,8 +29,8 @@ jobs:
       - name: Commit report
         run: |
           git status
-          git config --global user.name 'Github Action'
-          git config --global user.email 'github-action@users.noreply.github.com'
+          git config --global user.name 'marqh'
+          git config --global user.email 'mark.hedley@metoffice.gov.uk'
           git add grib/grib2/mo--74.ttl
           git add grib/grib2/mo--74/*
           git commit -am 'Github Action Commit'
