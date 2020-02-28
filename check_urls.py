@@ -34,14 +34,15 @@ class TestContentsConsistency(unittest.TestCase):
     def check_result(self, result, expected, uploads, identityURI):
         lbr = ('\n#######inTestResult#######\n')
         lbe = ('\n#######inExpected#######\n')
-        result = rdflib.compare.isomorphic(result, expected)
-        msg = lbr + lbe.join([g.serialize(format='n3').decode("utf-8")
-                              for g in
-                              rdflib.compare.graph_diff(result, expected)[1:]])
-        if not result:
+        try:
+            assert(rdflib.compare.isomorphic(result, expected))
+        except AssertionError:
             ufile = '{}.ttl'.format(identityURI.split(rooturl)[1])
             uploads['PUT'].append(ufile)
-        self.assertTrue(result, msg)
+        self.assertTrue(rdflib.compare.isomorphic(result, expected),
+                        lbr + lbe.join([g.serialize(format='n3').decode("utf-8") for g in
+                                        rdflib.compare.graph_diff(result,
+                                                                  expected)[1:]]))
                         
 
 with open('prodRegister', 'r') as fh:
