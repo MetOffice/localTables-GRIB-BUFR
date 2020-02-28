@@ -33,6 +33,7 @@ conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
                    '\t.\n')
 
 def main():
+    print('Make GRIB2 TTL contents')
     root_path = os.path.dirname(__file__)
 
     with open(os.path.join(root_path, 'mo--74.ttl'), 'w') as csf:

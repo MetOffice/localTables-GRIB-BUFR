@@ -92,7 +92,7 @@ for f in glob.glob('**/*.ttl', recursive=True):
         return entity_consistent
 
     # skip uncheckable content, e.g. container registers
-    print(f)
+    # print(f)
     if f in ['grib/grib2/mo--74.ttl']:
         continue
 
