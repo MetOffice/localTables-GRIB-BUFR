@@ -31,14 +31,18 @@ class TestContentsConsistency(unittest.TestCase):
             pr = requests.get(p)
             self.assertEqual(pr.status_code, 200)
 
-    def check_result(self, result, expected):
+    def check_result(self, result, expected, uploads, identityURI):
         lbr = ('\n#######inTestResult#######\n')
         lbe = ('\n#######inExpected#######\n')
-
-        self.assertTrue(rdflib.compare.isomorphic(result, expected),
-                        lbr + lbe.join([g.serialize(format='n3').decode("utf-8") for g in
-                                        rdflib.compare.graph_diff(result,
-                                                                  expected)[1:]]))
+        result = rdflib.compare.isomorphic(result, expected)
+        msg = lbr + lbe.join([g.serialize(format='n3').decode("utf-8")
+                              for g in
+                              rdflib.compare.graph_diff(result, expected)[1:]])
+        if not result:
+            ufile = '{}.ttl'.format(identityURI.split(rooturl)[1])
+            uploads['PUT'].append(ufile)
+        self.assertTrue(result, msg)
+                        
 
 with open('prodRegister', 'r') as fh:
     rooturl = fh.read().split('\n')[0]
@@ -80,7 +84,8 @@ for f in glob.glob('**/*.ttl', recursive=True):
             result_rdfgraph = rdflib.Graph()
             # print(identityURI)
             result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
-            self.check_result(result_rdfgraph, expected_rdfgraph)
+            self.check_result(result_rdfgraph, expected_rdfgraph, uploads,
+                              identityURI)
         return entity_consistent
 
     # skip uncheckable content, e.g. container registers
