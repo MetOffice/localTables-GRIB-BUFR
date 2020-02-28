@@ -50,7 +50,7 @@ def put(session, url, payload):
     response = session.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
-    res = session.post(url, headers=headers, data=payload)
+    res = session.put(url, headers=headers, data=payload)
 
 def post_uploads(session, rootURL, uploads):
     for postfile in uploads:
@@ -63,10 +63,19 @@ def post_uploads(session, rootURL, uploads):
         print(url)
         post(session, url, pdata)
 
+def put_uploads(session, rootURL, uploads):
+    for putfile in uploads:
+        with open('.{}'.format(putfile), 'r') as pf:
+            pdata = pf.read()
+        relID = putfile.rstrip('.ttl')
+        url = '{}{}'.format(rootURL, relID)
+        print(url)
+        put(session, url, pdata)
+
 if __name__ == '__main__':
     with open('prodRegister', 'r') as fh:
         rooturl = fh.read().split('\n')[0]
-        print('Running test with respect to {}'.format(rooturl))
+        print('Running upload with respect to {}'.format(rooturl))
 
     parser = argparse.ArgumentParser()
     parser.add_argument('user_id')
@@ -78,5 +87,5 @@ if __name__ == '__main__':
     session = authenticate(session, rooturl, args.user_id, args.passcode)
     print(uploads)
     post_uploads(session, rooturl, uploads['POST'])
-    
+    put_uploads(session, rooturl, uploads['PUT'])
 
