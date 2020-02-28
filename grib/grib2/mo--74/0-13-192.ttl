@@ -2,7 +2,7 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
 <0-13-192> a skos:Concept ;
-	rdfs:label "dust concentration 2000 - 5000 ft"@en ;
+	rdfs:label "dust concentration: 2000 - 5000 ft"@en ;
 	<http://metarelate.net/vocabulary/index.html#identifier> 	<http://codes.wmo.int/def/common/edition> , 	<http://codes.wmo.int/def/common/centre> , 	<http://codes.wmo.int/def/grib2/discipline> , 	<http://codes.wmo.int/def/grib2/parameter> , 	<http://codes.wmo.int/def/grib2/category> ;
 	<http://codes.wmo.int/def/common/centre> <http://codes.wmo.int/common/centre/74> ;
 	<http://codes.wmo.int/def/common/edition> <http://codes.wmo.int/codeform/grib2> ;
