@@ -6,6 +6,7 @@
 	<http://metarelate.net/vocabulary/index.html#identifier> 	<http://codes.wmo.int/def/common/edition> , 	<http://codes.wmo.int/def/common/centre> , 	<http://codes.wmo.int/def/grib2/discipline> , 	<http://codes.wmo.int/def/grib2/parameter> , 	<http://codes.wmo.int/def/grib2/category> ;
 	<http://codes.wmo.int/def/common/centre> <http://codes.wmo.int/common/centre/74> ;
 	<http://codes.wmo.int/def/common/edition> <http://codes.wmo.int/codeform/grib2> ;
+	<http://codes.wmo.int/def/common/unit> "m" ;
 	<http://codes.wmo.int/def/grib2/category> <http://codes.wmo.int/grib2/codeflag/4.1/10-0> ;
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/10> ;
 	<http://codes.wmo.int/def/grib2/parameter> 197 ;
