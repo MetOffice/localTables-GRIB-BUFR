@@ -3,7 +3,7 @@ STASH code,Parameter,Unit,Discipline,Category,Number
 3225,u component of wind (surface adjusted),m/s,0,2,192
 3226,v component of wind (surface adjusted),m/s,0,2,193
 3225,wind direction (from which blowing) (surface adjusted),degrees,0,2,194
-3226,wind speed (surface adjusted),m/s,0,3,195
+3226,wind speed (surface adjusted),m/s,0,2,195
 9210,height of lowest cloud base greater than 2.5 oktas,kft,0,6,192
 20058,surface dust concentration,g/m3,0,13,192
 20059,dust concentration: 2000 - 5000 ft,g/m3,0,13,192
