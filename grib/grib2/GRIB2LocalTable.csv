@@ -3,18 +3,18 @@ STASH code,Parameter,Unit,Discipline,Category,Number
 9210,height of lowest cloud base greater than 2.5 oktas,kft,0,6,192
 20058,surface dust concentration,g/m3,0,13,192
 20059,dust concentration: 2000 - 5000 ft,g/m3,0,13,192
-6071,2nd swell period,,10,0,193
-6073,2nd swell direction,,10,0,194
-6070,2nd swell height,,10,0,195
-6074,2nd swell mean directional spread,,10,0,196
+6071,2nd swell period,s,10,0,193
+6073,2nd swell direction,degrees,10,0,194
+6070,2nd swell height,m,10,0,195
+6074,2nd swell mean directional spread,degrees,10,0,196
 6081,3rd swell period,m,10,0,197
-6083,3rd swell direction,,10,0,198
-6080,3rd swell height,,10,0,199
-6084,3rd swell mean directional spread,,10,0,200
-6110,wind sea energy at peak frequency,,10,0,201
-6120,swell energy at peak frequency,,10,0,202
-6130,2nd swell energy at peak frequency,,10,0,203
-6140,3rd swell energy at peak frequency,,10,0,204
-152,tide current direction,,10,1,193
-151,tide current speed,,10,1,192
+6083,3rd swell direction,degrees,10,0,198
+6080,3rd swell height,m,10,0,199
+6084,3rd swell mean directional spread,degrees,10,0,200
+6110,wind sea energy at peak frequency,m2/Hz/rad,10,0,201
+6120,swell energy at peak frequency,m2/Hz/rad,10,0,202
+6130,2nd swell energy at peak frequency,m2/Hz/rad,10,0,203
+6140,3rd swell energy at peak frequency,m2/Hz/rad,10,0,204
+152,tide current direction,degrees,10,1,193
+151,tide current speed,m s-1,10,1,192
 150,tide water level,m,10,3,192
