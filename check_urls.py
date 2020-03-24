@@ -1,6 +1,7 @@
 import copy
 import glob
 import json
+import os
 import unittest
 
 import rdflib
@@ -51,8 +52,18 @@ with open('prodRegister', 'r') as fh:
     rooturl = fh.read().split('\n')[0]
     print('Running test with respect to {}'.format(rooturl))
 
+# Clean all .ttl files from the source tree
+
+for f in glob.glob('**/*.ttl', recursive=True):
+    os.remove(f)
+
+# Ensure that all TTL content is built from the input tables.
+
+makeG2.main()
 
 
+# Build test cases based on the TTL files within the repository,
+# one test case per file.
 for f in glob.glob('**/*.ttl', recursive=True):    
     relf = f.rstrip('.ttl')
     identity = '{}/{}'.format(rooturl, relf)
@@ -101,7 +112,6 @@ for f in glob.glob('**/*.ttl', recursive=True):
 
 
 if __name__ == '__main__':
-    makeG2.main()
     try:
         unittest.main()
     except Exception as e:
