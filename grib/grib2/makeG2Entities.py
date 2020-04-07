@@ -1,16 +1,28 @@
 import csv
 import os
 
-conceptSchemeTp = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
+conceptScheme42 = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
                    '@prefix dct: <http://purl.org/dc/terms/> . \n'
                    '@prefix ldp:   <http://www.w3.org/ns/ldp#> .\n'
                    '@prefix reg:   <http://purl.org/linked-data/registry#> .\n'
                    '@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\n\n'
-                   '<mo--74> a reg:Register , skos:ConceptScheme , ldp:Container  ;\n'
+                   '<4.2> a reg:Register , skos:ConceptScheme , ldp:Container  ;\n'
                    '\tldp:isMemberOfRelation skos:inScheme ;\n'
-                   '\trdfs:label "Met Office Local Table definitions"@en ;\n'
-                   '\tdct:description "Met Office Local Table definitions '
+                   '\trdfs:label "Met Office Local Table Parameter Definitions"@en ;\n'
+                   '\tdct:description "Met Office Local Table Parameter definitions '
                    'Extending WMO GRIB2 code table 4.2 for cases where the '
+                   'defined centre number is 74."@en .\n')
+
+conceptScheme45 = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
+                   '@prefix dct: <http://purl.org/dc/terms/> . \n'
+                   '@prefix ldp:   <http://www.w3.org/ns/ldp#> .\n'
+                   '@prefix reg:   <http://purl.org/linked-data/registry#> .\n'
+                   '@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\n\n'
+                   '<4.5> a reg:Register , skos:ConceptScheme , ldp:Container  ;\n'
+                   '\tldp:isMemberOfRelation skos:inScheme ;\n'
+                   '\trdfs:label "Met Office Local Table Surface Type Definitions"@en ;\n'
+                   '\tdct:description "Met Office Local Table Surface Type definitions '
+                   'Extending WMO GRIB2 code table 4.5 for cases where the '
                    'defined centre number is 74."@en .\n')
 
 conceptTemplate = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
@@ -36,12 +48,15 @@ def main():
     print('Make GRIB2 TTL contents')
     root_path = os.path.dirname(__file__)
 
-    with open(os.path.join(root_path, 'mo--74.ttl'), 'w') as csf:
-        csf.write(conceptSchemeTp)
+    with open(os.path.join(root_path, 'mo--74/4.2.ttl'), 'w') as csf:
+        csf.write(conceptScheme42)
+
+    with open(os.path.join(root_path, 'mo--74/4.5.ttl'), 'w') as csf:
+        csf.write(conceptScheme45)
 
     with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
         greader = csv.DictReader(cf)
-        ttlpath = os.path.join(root_path, 'mo--74')
+        ttlpath = os.path.join(root_path, 'mo--74', '4.2')
         if not os.path.exists(ttlpath):
             os.mkdir(ttlpath)
         for entity in greader:

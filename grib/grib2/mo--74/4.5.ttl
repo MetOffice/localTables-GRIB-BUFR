@@ -4,7 +4,7 @@
 @prefix reg:   <http://purl.org/linked-data/registry#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
-<mo--74> a reg:Register , skos:ConceptScheme , ldp:Container  ;
+<4.5> a reg:Register , skos:ConceptScheme , ldp:Container  ;
 	ldp:isMemberOfRelation skos:inScheme ;
-	rdfs:label "Met Office Local Table definitions"@en ;
-	dct:description "Met Office Local Table definitions Extending WMO GRIB2 code table 4.2 for cases where the defined centre number is 74."@en .
+	rdfs:label "Met Office Local Table Surface Type Definitions"@en ;
+	dct:description "Met Office Local Table Surface Type definitions Extending WMO GRIB2 code table 4.5 for cases where the defined centre number is 74."@en .
