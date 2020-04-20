@@ -35,8 +35,7 @@ jobs:
           git checkout master
           git config --global user.name 'marqh'
           git config --global user.email 'mark.hedley@metoffice.gov.uk'
-          git add grib/grib2/mo--74.ttl
-          git add grib/grib2/mo--74/*
+          git add ./\*.ttl
           if [ -z "$(git status --porcelain)" ]; 
               then echo 'nothing to commit'
           else 
