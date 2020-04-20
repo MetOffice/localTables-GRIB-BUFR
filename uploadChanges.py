@@ -41,7 +41,7 @@ def post(session, url, payload):
     if response.status_code != 200:
         raise ValueError('Cannot POST to {}, it exists.'.format(url))
     params = {'status':'Experimental'}
-    res = session.post(url, headers=headers, data=payload, params=params)
+    res = session.post(url, headers=headers, data=payload.encode("utf-8"), params=params)
     if res.status_code != 201:
         print('POST failed with {}\n{}'.format(res.status_code, res.reason))
 
@@ -50,7 +50,7 @@ def put(session, url, payload):
     response = session.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
-    res = session.put(url, headers=headers, data=payload)
+    res = session.put(url, headers=headers, data=payload.encode("utf-8"))
 
 def post_uploads(session, rootURL, uploads):
     for postfile in uploads:
