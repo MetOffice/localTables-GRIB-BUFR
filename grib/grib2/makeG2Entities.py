@@ -51,8 +51,8 @@ def main():
     with open(os.path.join(root_path, 'mo--74/4.2.ttl'), 'w') as csf:
         csf.write(conceptScheme42)
 
-    with open(os.path.join(root_path, 'mo--74/4.5.ttl'), 'w') as csf:
-        csf.write(conceptScheme45)
+    # with open(os.path.join(root_path, 'mo--74/4.5.ttl'), 'w') as csf:
+    #     csf.write(conceptScheme45)
 
     with open(os.path.join(root_path, 'GRIB2LocalTable.csv')) as cf:
         greader = csv.DictReader(cf)
