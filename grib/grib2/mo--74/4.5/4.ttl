@@ -1,0 +1,7 @@
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . 
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<4> a skos:Concept ;
+	rdfs:label "Level of 0 °C isotherm"@en ;
+	skos:notation "4"@en ;
+	.

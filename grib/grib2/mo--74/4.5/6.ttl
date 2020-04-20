@@ -1,0 +1,7 @@
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . 
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<6> a skos:Concept ;
+	rdfs:label "Maximum wind level"@en ;
+	skos:notation "6"@en ;
+	.
