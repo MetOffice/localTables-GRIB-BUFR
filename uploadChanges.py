@@ -36,7 +36,7 @@ def parse_uploads(uploads):
     return result
 
 def post(session, url, payload):
-    headers={'Content-type':'text/turtle'}
+    headers={'Content-type':'text/turtle', 'charset':'utf-8'}
     response = session.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError('Cannot POST to {}, it exists.'.format(url))
@@ -46,7 +46,7 @@ def post(session, url, payload):
         print('POST failed with {}\n{}'.format(res.status_code, res.reason))
 
 def put(session, url, payload):
-    headers={'Content-type':'text/turtle'}
+    headers={'Content-type':'text/turtle', 'charset':'utf-8'}
     response = session.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
@@ -54,7 +54,7 @@ def put(session, url, payload):
 
 def post_uploads(session, rootURL, uploads):
     for postfile in uploads:
-        with open('.{}'.format(postfile), 'r') as pf:
+        with open('.{}'.format(postfile), 'r', encoding="utf-8") as pf:
             pdata = pf.read()
         # post, so remove last part of identity, this is in the payload
         relID = postfile.rstrip('.ttl')
@@ -65,7 +65,7 @@ def post_uploads(session, rootURL, uploads):
 
 def put_uploads(session, rootURL, uploads):
     for putfile in uploads:
-        with open('.{}'.format(putfile), 'r') as pf:
+        with open('.{}'.format(putfile), 'r', encoding="utf-8") as pf:
             pdata = pf.read()
         relID = putfile.rstrip('.ttl')
         url = '{}{}'.format(rootURL, relID)
@@ -73,7 +73,7 @@ def put_uploads(session, rootURL, uploads):
         put(session, url, pdata)
 
 if __name__ == '__main__':
-    with open('prodRegister', 'r') as fh:
+    with open('prodRegister', 'r', encoding='utf-8') as fh:
         rooturl = fh.read().split('\n')[0]
         print('Running upload with respect to {}'.format(rooturl))
 

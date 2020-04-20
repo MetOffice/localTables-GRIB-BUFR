@@ -104,7 +104,7 @@ for f in glob.glob('**/*.ttl', recursive=True):
 
     # skip uncheckable content, e.g. container registers
     # print(f)
-    if f in ['grib/grib2/mo--74/4.2.ttl']:
+    if f in ['grib/grib2/mo--74/4.2.ttl', 'grib/grib2/mo--74/4.5.ttl']:
         continue
 
     tname = 'test_consistent_{}'.format(relf.replace('/', '_'))
