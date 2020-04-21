@@ -1,7 +1,0 @@
-@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . 
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-
-<5> a skos:Concept ;
-	rdfs:label "Level of adiabatic condensation lifted from the surface"@en ;
-	skos:notation "5"@en ;
-	.

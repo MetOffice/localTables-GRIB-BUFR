@@ -1,7 +1,0 @@
-@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . 
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-
-<2> a skos:Concept ;
-	rdfs:label "Cloud base level"@en ;
-	skos:notation "2"@en ;
-	.
