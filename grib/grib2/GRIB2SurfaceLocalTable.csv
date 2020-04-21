@@ -1,8 +1,2 @@
 Code figure,Parameter,Unit
-0,Reserved,
-1,Ground or water surface,
-2,Cloud base level,
-3,Level of cloud tops,
-4,Level of 0 °C isotherm,
-5,Level of adiabatic condensation lifted from the surface,
-6,Maximum wind level,
+192,Level of wet-bulb potential temperature 0 °C isotherm,
