@@ -9,6 +9,8 @@ STASH code,Parameter,Unit,Discipline,Category,Number
 9218,cloud amount below 1000 feet ASL,%,0,6,195
 20058,surface dust concentration,g/m3,0,13,192
 20059,dust concentration: 2000 - 5000 ft,g/m3,0,13,192
+431,dust mass mixing ratio division 1,kg/kg,0,13,193
+432,dust mass mixing ratio division 2,kg/kg,0,13,194
 6071,2nd swell period,s,10,0,193
 6073,2nd swell direction,degrees,10,0,194
 6070,2nd swell height,m,10,0,195
