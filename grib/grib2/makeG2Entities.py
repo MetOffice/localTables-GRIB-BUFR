@@ -69,19 +69,32 @@ def main():
                                  '{d}-{c}-{n}.ttl'.format(d=entity['Discipline'],
                                                           c=entity['Category'],
                                                           n=entity['Number']))
-            with open(fpath, 'w', encoding='utf-8') as fh:
-                # unit is not fully populated yet
-                ustr = ''
-                if entity['Unit']:
-                    ustr = '\t<http://codes.wmo.int/def/common/unit> "{}" ;\n'
-                    ustr = ustr.format(entity['Unit'])
-                fh.write(conceptTemplate42.format(d=entity['Discipline'],
+            # unit is not fully populated yet
+            ustr = ''
+            if entity['Unit']:
+                ustr = '\t<http://codes.wmo.int/def/common/unit> "{}" ;\n'
+                ustr = ustr.format(entity['Unit'])
+            dstr = conceptTemplate42.format(d=entity['Discipline'],
                                                 c=entity['Category'],
                                                 n=entity['Number'],
                                                 label=entity['Parameter'],
                                                 u=ustr,
                                                 ss=int(int(entity['STASH code'])/1000),
-                                                si=int(entity['STASH code'])%1000))
+                                                si=int(entity['STASH code'])%1000)
+            if os.path.exists(fpath):
+                with open(fpath, 'r', encoding='utf-8') as fh:
+                    fhdef = fh.read()
+                    for a, b in zip(fhdef.split('\n'), dstr.split('\n')):
+                        if a != b:
+                            if 'skos:related' in a and 'skos:related' in b:
+                                ostr = dstr.replace(b, '{}\n{}'.format(a, b))
+                            else:
+                                raise ValueError('{} respecified with alternate definition'.format(fpath))
+            else:
+                ostr = dstr
+                
+            with open(fpath, 'w', encoding='utf-8') as fh:
+                fh.write(ostr)
 
     with open(os.path.join(root_path, 'mo--74/4.5.ttl'), 'w') as csf:
         csf.write(conceptScheme45)
@@ -93,14 +106,20 @@ def main():
             os.mkdir(ttlpath)
         for entity in greader:
             fpath = os.path.join(ttlpath, '{}.ttl'.format(entity['Code figure']))
-            with open(fpath, 'w', encoding='utf-8') as fh:
-                ustr = ''
-                if entity['Unit']:
-                    ustr = '\t<http://codes.wmo.int/def/common/unit> "{}" ;\n'
-                    ustr = ustr.format(entity['Unit'])
-                fh.write(conceptTemplate45.format(cf=entity['Code figure'],
+            ustr = ''
+            if entity['Unit']:
+                ustr = '\t<http://codes.wmo.int/def/common/unit> "{}" ;\n'
+                ustr = ustr.format(entity['Unit'])
+            ostr = conceptTemplate45.format(cf=entity['Code figure'],
                                                 label=entity['Parameter'],
-                                                u=ustr))
+                                                u=ustr)
+
+            if os.path.exists(fpath):
+                with open(fpath, 'r', encoding='utf-8') as fh:
+                    if fh.read != ostr:
+                        raise ValueError('{} respecified with alternate definition'.format(fpath))
+            with open(fpath, 'w', encoding='utf-8') as fh:
+                fh.write(ostr)
 
 
 if __name__ == '__main__':

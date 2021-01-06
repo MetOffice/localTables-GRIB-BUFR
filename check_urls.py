@@ -71,7 +71,8 @@ for f in glob.glob('**/*.ttl', recursive=True):
     def make_a_test(infile):
         identityURI = copy.copy(identity)
         def entity_exists(self):
-            regr = requests.get(identityURI)
+            headers={'Accept':'text/turtle'}
+            regr = requests.get(identityURI, headers=headers)
             try:
                 assert(regr.status_code == 200)
             except AssertionError:
@@ -87,10 +88,10 @@ for f in glob.glob('**/*.ttl', recursive=True):
     def make_another_test(infile):
         identityURI = copy.copy(identity)
         def entity_consistent(self):
-            regr = requests.get(identityURI)
+            headers={'Accept':'text/turtle'}
+            regr = requests.get(identityURI, headers=headers)
             ufile = '{}.ttl'.format(identityURI.split(rooturl)[1].lstrip('/'))
             assert(regr.status_code == 200)
-            headers={'Accept':'text/turtle'}
             expected = requests.get(identityURI, headers=headers)
             expected_rdfgraph = rdflib.Graph()
             expected_rdfgraph.parse(data=expected.text, format='n3')
