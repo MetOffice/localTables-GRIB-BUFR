@@ -1,5 +1,6 @@
 STASH code,Parameter,Unit,Discipline,Category,Number
 16205,wet bulb potential temperature,K,0,0,192
+254,cloud water mixing ratio,kg/kg,0,1,192
 3225,u component of wind (surface adjusted),m/s,0,2,192
 3226,v component of wind (surface adjusted),m/s,0,2,193
 3225,wind direction (from which blowing) (surface adjusted),degrees,0,2,194
