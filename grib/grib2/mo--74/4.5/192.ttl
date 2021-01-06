@@ -2,6 +2,6 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
 <192> a skos:Concept ;
-	rdfs:label "Level of wet-bulb potential temperature 0 °C isotherm"@en ;
+	rdfs:label "Level of wet-bulb temperature 0 °C isotherm"@en ;
 	skos:notation "192"@en ;
 	.
