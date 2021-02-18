@@ -41,7 +41,7 @@ conceptTemplate42 = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n
                    '\t<http://codes.wmo.int/def/grib2/category> <http://codes.wmo.int/grib2/codeflag/4.1/{d}-{c}> ;\n'
                    '\t<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/{d}> ;\n'
                    '\t<http://codes.wmo.int/def/grib2/parameter> {n} ;\n'
-                   '\tskos:related <http://reference.metoffice.gov.uk/um/stash/m01s{ss}i{si}> ;\n'
+                   '\tskos:related <http://reference.metoffice.gov.uk/um/stash/m01s{ss:02d}i{si:03d}> ;\n'
                    '\t.\n')
 
 conceptTemplate45 = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
