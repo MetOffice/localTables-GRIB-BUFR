@@ -10,5 +10,5 @@
 	<http://codes.wmo.int/def/grib2/category> <http://codes.wmo.int/grib2/codeflag/4.1/10-0> ;
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/10> ;
 	<http://codes.wmo.int/def/grib2/parameter> 197 ;
-	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s6i81> ;
+	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s06i081> ;
 	.
