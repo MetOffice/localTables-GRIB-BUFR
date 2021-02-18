@@ -12,6 +12,11 @@ STASH code,Parameter,Unit,Discipline,Category,Number
 20059,dust concentration,g/m3,0,13,192
 431,dust mass mixing ratio division 1,kg/kg,0,13,193
 432,dust mass mixing ratio division 2,kg/kg,0,13,194
+3318,primary deciduous trees,1,2,0,192
+3318,primary evergreen trees,1,2,0,193
+3318,natural grasses of C3 plant functional types,1,2,0,194
+3318,natural grasses of C4 plant functional types,1,2,0,195
+3318,shrubs,1,2,0,196
 6071,2nd swell period,s,10,0,193
 6073,2nd swell direction,degrees,10,0,194
 6070,2nd swell height,m,10,0,195
