@@ -33,3 +33,4 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 152,tide current direction,,degrees,10,1,193
 ,Depth Max Current,The depth at which the maximum current occurs.,m,10,1,194
 150,tide water level,,m,10,3,192
+,Visibility of Ocean,"The Visibility of the Ocean, the light Secchi depth (1.7/Kd)",m,10,4,192
