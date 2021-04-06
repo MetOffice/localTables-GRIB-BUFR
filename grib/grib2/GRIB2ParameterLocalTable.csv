@@ -32,3 +32,4 @@ STASH code,Parameter,Unit,Discipline,Category,Number
 152,tide current direction,degrees,10,1,193
 151,tide current speed,m s-1,10,1,192
 150,tide water level,m,10,3,192
+,Visibility of Ocean,m,10,4,192
