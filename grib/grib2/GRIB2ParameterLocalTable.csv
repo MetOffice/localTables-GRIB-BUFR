@@ -12,6 +12,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 20059,dust concentration,,g/m3,0,13,192
 431,dust mass mixing ratio division 1,,kg/kg,0,13,193
 432,dust mass mixing ratio division 2,,kg/kg,0,13,194
+21104,total lightning flash density,,m-2 s-1,0,17,192
 3318,primary deciduous trees,,1,2,0,192
 3318,primary evergreen trees,,1,2,0,193
 3318,natural grasses of C3 plant functional types,,1,2,0,194
