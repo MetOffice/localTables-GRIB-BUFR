@@ -5,6 +5,8 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 3226,v component of wind (surface adjusted),,m/s,0,2,193
 3225,wind direction (from which blowing) (surface adjusted),,degrees,0,2,194
 3226,wind speed (surface adjusted),,m/s,0,2,195
+,Geometric altitude above mean sea level,,m,0,3,192
+,Geometric height above ground level,,m,0,3,193
 1213,upward UV radiation,,W/m2,0,4,192
 9210,height of lowest cloud base greater than 2.5 oktas,,kft,0,6,192
 9218,cloud amount below 1000 feet ASL,,%,0,6,195
