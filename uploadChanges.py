@@ -40,7 +40,7 @@ def post(session, url, payload):
     response = session.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError('Cannot POST to {}, it exists.'.format(url))
-    params = {'status':'Experimental'}
+    params = {'status':'experimental'}
     res = session.post(url, headers=headers, data=payload.encode("utf-8"), params=params)
     if res.status_code != 201:
         print('POST failed with {}\n{}'.format(res.status_code, res.reason))
