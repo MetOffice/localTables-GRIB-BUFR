@@ -65,7 +65,7 @@ makeG2.main()
 # Build test cases based on the TTL files within the repository,
 # one test case per file.
 for f in glob.glob('**/*.ttl', recursive=True):    
-    relf = f.rstrip('.ttl')
+    relf = f.replace('.ttl', '')
     identity = '{}/{}'.format(rooturl, relf)
 
     def make_a_test(infile):
