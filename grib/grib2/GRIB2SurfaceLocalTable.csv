@@ -2,3 +2,7 @@ Code figure,Parameter,Unit
 192,Level of wet-bulb temperature 0 °C isotherm,
 193,Convective cloud layer bottom level,
 194,Convective cloud layer top level,
+195,Equilibrium level of most unstable CAPE,
+196,Equilibrium level of mixed layer CAPE,
+197,Effective inflow layer base height,
+198,Effective inflow layer top height,
