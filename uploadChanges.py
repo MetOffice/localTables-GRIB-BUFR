@@ -84,6 +84,12 @@ if __name__ == '__main__':
     parser.add_argument('uploads')
     args = parser.parse_args()
     session = requests.Session()
+    if os.path.exists(args.uploads):
+        with open(args.uploads, 'r') as ups:
+            uploads = ups.read()
+    else:
+        uploads = args.uploads
+    uploads = parse_uploads(uploads)
     uploads = parse_uploads(args.uploads)
     session = authenticate(session, rooturl, args.user_id, args.passcode)
     print(uploads)
