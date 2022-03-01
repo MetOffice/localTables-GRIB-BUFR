@@ -32,6 +32,7 @@ jobs:
         run: |
           nofails=1 outfile='/tmp/reg_test_results' python3 -m check_urls
       - name: commit and upload to Register
+        run: | 
           git status
           git checkout master
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
