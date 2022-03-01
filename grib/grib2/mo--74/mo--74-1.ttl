@@ -3,6 +3,7 @@
 @prefix ldp:   <http://www.w3.org/ns/ldp#> .
 @prefix reg:   <http://purl.org/linked-data/registry#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 <mo--74-1> a reg:Register , skos:ConceptScheme , ldp:Container  ;
 	ldp:isMemberOfRelation skos:inScheme ;
 	dct:dataAccepted "2022-02-28"^^xsd:date ;
