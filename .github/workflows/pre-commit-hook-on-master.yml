@@ -1,4 +1,4 @@
-name: pre-commit
+name: commit-to-registry
 
 on:
   # Trigger the workflow on push
@@ -28,13 +28,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install rdflib
           pip install requests
-      - name: Test - then commit results if successful
+      - name: nofail tests
         run: |
-          python3 -m check_urls
+          nofails=1 outfile='/tmp/reg_test_results' python3 -m check_urls
+      - name: commit and upload to Register
           git status
           git checkout master
-          git config --global user.name 'marqh'
-          git config --global user.email 'mark.hedley@metoffice.gov.uk'
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --global user.name "${{ github.actor }}"
           git add ./\*.ttl
           if [ -z "$(git status --porcelain)" ]; 
               then echo 'nothing to commit'
@@ -43,3 +44,7 @@ jobs:
               git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
               git push
           fi
+          python3 -m uploadChanges {{ secrets.registeruname }} {{ secrets.registertpass  }} /tmp/reg_test_results
+      - name: Test
+        run: |
+          python3 -m check_urls
