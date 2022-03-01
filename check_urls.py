@@ -33,7 +33,7 @@ if outfile is not None:
         raise ValueError('outfile directory does not exist: {}'.format(outfile))
     elif not os.access(os.path.dirname(outfile), os.W_OK):
         raise ValueError('outfile directory is not writeable: {}'.format(outfile))
-    elif os.path.exists and not os.access(outfile, os.W_OK):
+    elif os.path.exists(outfile) and not os.access(outfile, os.W_OK):
         raise ValueError('outfile is not writeable: {}'.format(outfile))
 
 nofails = os.environ.get('nofails', None)
