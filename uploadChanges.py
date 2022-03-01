@@ -90,7 +90,6 @@ if __name__ == '__main__':
     else:
         uploads = args.uploads
     uploads = parse_uploads(uploads)
-    uploads = parse_uploads(args.uploads)
     session = authenticate(session, rooturl, args.user_id, args.passcode)
     print(uploads)
     post_uploads(session, rooturl, uploads['POST'])
