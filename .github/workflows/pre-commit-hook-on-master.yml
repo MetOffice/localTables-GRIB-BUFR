@@ -32,6 +32,9 @@ jobs:
         run: |
           nofails=1 outfile=/tmp/reg_test_results python3 -m check_urls
       - name: commit and upload to Register
+        env:
+          UNAME: ${{ secrets.registeruname }}
+          TPASS: ${{ secrets.registertpass }}
         run: | 
           git status
           git checkout master
@@ -45,7 +48,7 @@ jobs:
               git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
               git push
           fi
-          python3 -m uploadChanges {{ secrets.registeruname }} {{ secrets.registertpass  }} /tmp/reg_test_results
+          python3 -m uploadChanges "$UNAME" "$TPASS" /tmp/reg_test_results
       - name: Test
         run: |
           python3 -m check_urls
