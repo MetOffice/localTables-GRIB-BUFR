@@ -25,7 +25,7 @@ release = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
            '@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\n'
            '<{rel}> a reg:Register , skos:ConceptScheme , ldp:Container  ;\n'
            '\tldp:isMemberOfRelation skos:inScheme ;\n'
-           '\tdct.dataAccepted "{rdate}"^^xsd:date ;\n'
+           '\tdct:dataAccepted "{rdate}"^^xsd:date ;\n'
            '\tdct:identifier {relno} ;\n'
            '\trdfs:label "Release of GRIB2 Met Office Local Table definitions."@en ;\n'
            '\tdct:description "Release of GRIB2 Met Office Local Table definitions Extending WMO GRIB2 code tables for cases where the defined centre number is 74."@en .')
