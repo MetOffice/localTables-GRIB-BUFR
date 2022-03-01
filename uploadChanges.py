@@ -1,6 +1,6 @@
 import argparse
 import json
-
+import os
 import requests
 
 """
@@ -21,7 +21,7 @@ based on the relative path of the .ttl file.
 def authenticate(session, base, userid, pss):
     auth = session.post('{}/system/security/apilogin'.format(base),
                         data={'userid':userid,
-                                'password':pss})
+                                'password':pss}, verify=False)
     if not auth.status_code == 200:
         raise ValueError('auth failed')
 
@@ -37,20 +37,20 @@ def parse_uploads(uploads):
 
 def post(session, url, payload):
     headers={'Content-type':'text/turtle', 'charset':'utf-8'}
-    response = session.get(url, headers=headers)
+    response = session.get(url, headers=headers, verify=False)
     if response.status_code != 200:
         raise ValueError('Cannot POST to {}, it exists.'.format(url))
     params = {'status':'experimental'}
-    res = session.post(url, headers=headers, data=payload.encode("utf-8"), params=params)
+    res = session.post(url, headers=headers, data=payload.encode("utf-8"), params=params, verify=False)
     if res.status_code != 201:
         print('POST failed with {}\n{}'.format(res.status_code, res.reason))
 
 def put(session, url, payload):
     headers={'Content-type':'text/turtle', 'charset':'utf-8'}
-    response = session.get(url, headers=headers)
+    response = session.get(url, headers=headers, verify=False)
     if response.status_code != 200:
         raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
-    res = session.put(url, headers=headers, data=payload.encode("utf-8"))
+    res = session.put(url, headers=headers, data=payload.encode("utf-8"), verify=False)
 
 def post_uploads(session, rootURL, uploads):
     for postfile in uploads:
@@ -74,7 +74,7 @@ def put_uploads(session, rootURL, uploads):
 
 if __name__ == '__main__':
     with open('prodRegister', 'r', encoding='utf-8') as fh:
-        rooturl = fh.read().split('\n')[0]
+        rooturl = fh.read().split('\n')[0].replace('http://', 'https://')
         print('Running upload with respect to {}'.format(rooturl))
 
     parser = argparse.ArgumentParser()
@@ -83,7 +83,12 @@ if __name__ == '__main__':
     parser.add_argument('uploads')
     args = parser.parse_args()
     session = requests.Session()
-    uploads = parse_uploads(args.uploads)
+    if os.path.exists(args.uploads):
+        with open(args.uploads, 'r') as ups:
+            uploads = ups.read()
+    else:
+        uploads = args.uploads
+    uploads = parse_uploads(uploads)
     session = authenticate(session, rooturl, args.user_id, args.passcode)
     print(uploads)
     post_uploads(session, rooturl, uploads['POST'])

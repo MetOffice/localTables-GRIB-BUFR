@@ -9,6 +9,7 @@ import rdflib.compare
 import requests
 
 import grib.grib2.makeG2Entities as makeG2
+import grib.grib2.makeReleases as makeRels
 
 """
 This test script evaluates all folder which contain a file of name
@@ -26,13 +27,31 @@ remote that are not in the source tree.
 uploads = {'PUT': [],
            'POST': []}
 
+outfile = os.environ.get('outfile', None)
+if outfile is not None:
+    if not os.path.exists(os.path.dirname(outfile)):
+        raise ValueError('outfile directory does not exist: {}'.format(outfile))
+    elif not os.access(os.path.dirname(outfile), os.W_OK):
+        raise ValueError('outfile directory is not writeable: {}'.format(outfile))
+    elif os.path.exists(outfile) and not os.access(outfile, os.W_OK):
+        raise ValueError('outfile is not writeable: {}'.format(outfile))
+
+nofails = os.environ.get('nofails', None)
+if nofails is None or not nofails:
+    nofails = False
+else:
+    nofails = True
+
 class TestContentsConsistency(unittest.TestCase):
     #def test
     def test_prod_register(self):
         with open('prodRegister', 'r') as ph:
             p = ph.read().split('\n')[0]
             pr = requests.get(p)
-            self.assertEqual(pr.status_code, 200)
+            if nofails:
+                self.assertTrue(True)
+            else:
+                self.assertEqual(pr.status_code, 200)
 
     def check_result(self, result, expected, uploads, identityURI):
         lbr = ('\n#######inTestResult#######\n')
@@ -42,25 +61,23 @@ class TestContentsConsistency(unittest.TestCase):
         except AssertionError:
             ufile = '{}.ttl'.format(identityURI.split(rooturl)[1])
             uploads['PUT'].append(ufile)
-        self.assertTrue(rdflib.compare.isomorphic(result, expected),
-                        lbr + lbe.join([g.serialize(format='n3').decode("utf-8") for g in
-                                        rdflib.compare.graph_diff(result,
-                                                                  expected)[1:]]))
+        if nofails:
+            self.assertTrue(True)
+        else:
+            self.assertTrue(rdflib.compare.isomorphic(result, expected),
+                            lbr + lbe.join([g.serialize(format='n3').decode("utf-8") for g in
+                                            rdflib.compare.graph_diff(result,
+                                                                      expected)[1:]]))
                         
 
 with open('prodRegister', 'r') as fh:
     rooturl = fh.read().split('\n')[0]
     print('Running test with respect to {}'.format(rooturl))
 
-# Clean all .ttl files from the source tree
-
-for f in glob.glob('**/*.ttl', recursive=True):
-    os.remove(f)
-
 # Ensure that all TTL content is built from the input tables.
 
 makeG2.main()
-
+makeRels.main()
 
 # Build test cases based on the TTL files within the repository,
 # one test case per file.
@@ -80,7 +97,10 @@ for f in glob.glob('**/*.ttl', recursive=True):
                 uploads['POST'].append(ufile)
             msg = ('{} expected to return 200 but returned {}'
                    ''.format(identityURI, regr.status_code))
-            self.assertEqual(regr.status_code, 200, msg)
+            if nofails:
+                self.assertTrue(True)
+            else:
+                self.assertEqual(regr.status_code, 200, msg)
         return entity_exists
     tname = 'test_exists_{}'.format(relf.replace('/', '_'))
     setattr(TestContentsConsistency, tname, make_a_test(f))
@@ -91,16 +111,18 @@ for f in glob.glob('**/*.ttl', recursive=True):
             headers={'Accept':'text/turtle'}
             regr = requests.get(identityURI, headers=headers)
             ufile = '{}.ttl'.format(identityURI.split(rooturl)[1].lstrip('/'))
-            assert(regr.status_code == 200)
-            expected = requests.get(identityURI, headers=headers)
-            expected_rdfgraph = rdflib.Graph()
-            expected_rdfgraph.parse(data=expected.text, format='n3')
-            # print(expected)
-            result_rdfgraph = rdflib.Graph()
-            # print(identityURI)
-            result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
-            self.check_result(result_rdfgraph, expected_rdfgraph, uploads,
-                              identityURI)
+            if not nofails:
+                assert(regr.status_code == 200)
+            if regr.status_code == 200:
+                expected = requests.get(identityURI, headers=headers)
+                expected_rdfgraph = rdflib.Graph()
+                expected_rdfgraph.parse(data=expected.text, format='n3')
+                # print(expected)
+                result_rdfgraph = rdflib.Graph()
+                # print(identityURI)
+                result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
+                self.check_result(result_rdfgraph, expected_rdfgraph, uploads,
+                                  identityURI)
         return entity_consistent
 
     # skip uncheckable content, e.g. container registers
@@ -116,7 +138,9 @@ if __name__ == '__main__':
     try:
         unittest.main()
     except Exception as e:
-        import pdb; pdb.set_trace()
         raise e
     finally:
         print("uploads:\n'{}'".format(json.dumps(uploads)))
+        if outfile is not None:
+            with open(outfile, 'w') as ofh:
+                ofh.write(json.dumps(uploads))
