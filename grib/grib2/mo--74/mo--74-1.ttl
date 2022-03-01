@@ -5,7 +5,7 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 <mo--74-1> a reg:Register , skos:ConceptScheme , ldp:Container  ;
 	ldp:isMemberOfRelation skos:inScheme ;
-	dct.dataAccepted "2022-02-28"^^xsd:date ;
+	dct:dataAccepted "2022-02-28"^^xsd:date ;
 	dct:identifier 1 ;
 	rdfs:label "Release of GRIB2 Met Office Local Table definitions."@en ;
 	dct:description "Release of GRIB2 Met Office Local Table definitions Extending WMO GRIB2 code tables for cases where the defined centre number is 74."@en .
