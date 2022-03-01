@@ -30,7 +30,7 @@ jobs:
           pip install requests
       - name: nofail tests
         run: |
-          nofails=1 outfile='/tmp/reg_test_results' python3 -m check_urls
+          nofails=1 outfile=/tmp/reg_test_results python3 -m check_urls
       - name: commit and upload to Register
         run: | 
           git status
