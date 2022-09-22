@@ -1,4 +1,5 @@
 import csv
+import glob
 import os
 
 conceptScheme42 = ('@prefix skos:  <http://www.w3.org/2004/02/skos/core#> . \n'
@@ -57,6 +58,18 @@ conceptTemplate45 = ('@prefix dct: <http://purl.org/dc/terms/> . \n'
 def main():
     print('Make GRIB2 TTL contents')
     root_path = os.path.dirname(__file__)
+
+    root_path = os.path.dirname(os.path.abspath(__file__))
+    relFile = os.path.join(root_path, 'releases.csv')
+    with open(relFile) as relf:
+        reader = csv.DictReader(relf)
+        releases = []
+        for rel in reader:
+            releases.append(os.path.join(root_path, 'mo--74', rel.get('release')))
+    for ttlfile in glob.glob('**/*.ttl', recursive=True):
+        ttlf = os.path.abspath(ttlfile)
+        if not any([ttlf.startswith(r) for r in releases]):
+            os.remove(ttlf)
 
     with open(os.path.join(root_path, 'mo--74/4.2.ttl'), 'w') as csf:
         csf.write(conceptScheme42)
