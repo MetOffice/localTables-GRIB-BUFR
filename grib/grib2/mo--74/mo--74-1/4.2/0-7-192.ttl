@@ -1,0 +1,11 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+</grib/grib2/mo--74/4.2/0-7-192> a skos:Concept ;
+	rdfs:label "CAPE most unstable below 500hPa"@en ;
+.
+<> a reg:RegisterItem ;
+	reg:notation "0-7-192" ;
+	reg:definition [ reg:entity </grib/grib2/mo--74/4.2/0-7-192> ] ;
+	.
