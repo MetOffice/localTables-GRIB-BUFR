@@ -144,12 +144,12 @@ for f in glob.glob('**/*.ttl', recursive=True):
                 expected_rdfgraph.parse(data=expected.text, format='n3')
                 if os.path.exists(identityURI.split(rooturl)[1].lstrip('/')):
                     # add in member relations from tree
-                    col_id, = result_rdfgraph.subjects(rdflib.RDF.type, rdflib.namespace.SKOS.Collection)
+                    # col_id, = result_rdfgraph.subjects(rdflib.RDF.type, rdflib.namespace.SKOS.Collection)
                     for fname in glob.glob('{}/*.ttl'.format(identityURI.split(rooturl)[1].lstrip('/'))):
                         member_id = rdflib.term.URIRef(u'{}/{}'.format(identityURI, fname.split('/')[-1].split('.ttl')[0]))
-                        result_rdfgraph.add((col_id, rdflib.namespace.SKOS.member, member_id))
+                        #result_rdfgraph.add((col_id, rdflib.namespace.SKOS.member, member_id))
                         expected_rdfgraph.remove((member_id, None, None))
-                        expected_rdfgraph.remove((None, rdflib.namespace.RDFS.member, None))
+                        #expected_rdfgraph.remove((None, rdflib.namespace.RDFS.member, None))
                         #expected_rdfgraph.remove((None, rdflib.term.URIRef('http://purl.org/linked-data/registry#subregister'), None))
                 # print(expected)
                 # do not check version info or date modified (owned by registry)

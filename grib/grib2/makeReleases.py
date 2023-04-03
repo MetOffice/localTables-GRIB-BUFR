@@ -57,8 +57,6 @@ def build_release_content(content_root, release_id, relno, rdate, omissions,
     release_paths = [os.path.join(content_root, core_path, r) for r in releases]
     if not os.path.exists(root_path):
         os.mkdir(root_path)
-        with open(root_path + '.ttl', 'w') as rf:
-            rf.write(release.format(**{'rel':release_id,'relno':relno, 'rdate':rdate}))
         for ttlf in glob.glob('**/*.ttl', recursive=True):
             ttlfp = os.path.abspath(ttlf)
             # skip encoded releases
@@ -84,6 +82,11 @@ def build_release_content(content_root, release_id, relno, rdate, omissions,
                         fh.write(riTemplate.format(**{'uri': ttlf.replace('.ttl', ''),
                                                       'not': os.path.basename(ttlf).replace('.ttl', ''),
                                                       'label': label}))
+        # write the relese definition ttl file last, to avoid double writing
+        # newf copies of individual register definitions
+        with open(root_path + '.ttl', 'w') as rf:
+            rf.write(release.format(**{'rel':release_id,'relno':relno, 'rdate':rdate}))
+
 
 def parseReleaseDefs(content_root):
     with open(os.path.join(content_root, 'releases.csv')) as relf:
