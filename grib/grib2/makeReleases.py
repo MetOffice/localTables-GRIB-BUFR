@@ -55,6 +55,7 @@ def build_release_content(content_root, release_id, relno, rdate, omissions,
     core_path = 'mo--74'
     root_path = os.path.join(content_root, core_path, release_id)
     release_paths = [os.path.join(content_root, core_path, r) for r in releases]
+    omissions = [os.path.join(content_root, o + '.ttl') for o in omissions]
     if not os.path.exists(root_path):
         os.mkdir(root_path)
         for ttlf in glob.glob('**/*.ttl', recursive=True):
