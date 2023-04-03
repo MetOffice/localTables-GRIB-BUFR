@@ -69,12 +69,18 @@ def build_release_content(content_root, release_id, relno, rdate, omissions,
                 newf = root_path + ttlfp.replace(os.path.join(content_root, core_path), '')
                 if not os.path.exists(os.path.dirname(newf)):
                     os.mkdir(os.path.dirname(newf))
-                with open(newf, 'w') as fh:
-                    with open(ttlfp) as inp:
-                        inpc = inp.read()
-                    if os.path.exists(ttlfp.replace('.ttl', '')):
-                        fh.write(inpc)
-                    else:
+                if os.path.exists(ttlfp.replace('.ttl', '')):
+                    with open(newf, 'w') as fh:
+                        with open(ttlfp) as inp:
+                            inpc = inp.read()
+                            fh.write(inpc)
+                # write redirection release ttl files to filename with
+                # leading underscore to denote regItem for testing 
+                else:
+                    newf = os.path.join(os.path.dirname(newf), '_' + os.path.basename(newf))
+                    with open(newf, 'w') as fh:
+                        with open(ttlfp) as inp:
+                            inpc = inp.read()
                         m = lstr.match(inpc)
                         label = ''
                         if m is not None:
@@ -103,14 +109,16 @@ def parseReleaseDefs(content_root):
             build_release_content(content_root, rel.get('release'),
                                   rel.get('notation'), rel.get('date'),
                                   rel.get('omissions(|)').split('|'), releases)
+    return releases
 
 def main():
     content_root = os.path.dirname(os.path.abspath(__file__))
     if not os.path.exists(content_root):
         raise valueError('content root missing: {}'.format(content_root))
-    parseReleaseDefs(content_root)
+    releases = parseReleaseDefs(content_root)
     #omissions, release_id = parse_arguments(content_root)
     #build_release_content(content_root, release_id, omissions)
+    return releases
     
 if __name__ == '__main__':
     main()

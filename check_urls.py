@@ -33,6 +33,8 @@ def authenticate(session, base, userid, pss):
 
     return session
 
+
+# set up test environment
 with open('prodRegister', 'r', encoding='utf-8') as fh:
     rooturl = fh.read().split('\n')[0].replace('http://', 'https://')
 
@@ -48,6 +50,7 @@ if outfile is not None:
     elif os.path.exists(outfile) and not os.access(outfile, os.W_OK):
         raise ValueError('outfile is not writeable: {}'.format(outfile))
 
+# check for authenticated testing credentials
 uname = os.environ.get('uname', None)
 passcode = os.environ.get('passcode', None)
 
@@ -55,7 +58,7 @@ session = requests.Session()
 if uname is not None and passcode is not None:
     session = authenticate(session, rooturl, uname, passcode)
 
-
+# check for no failures running option
 nofails = os.environ.get('nofails', None)
 if nofails is None or not nofails:
     nofails = False
@@ -63,7 +66,7 @@ else:
     nofails = True
 
 class TestContentsConsistency(unittest.TestCase):
-    #def test
+    '''Test class, container for test generation below'''
     def test_prod_register(self):
         with open('prodRegister', 'r') as ph:
             p = ph.read().split('\n')[0]
@@ -88,7 +91,6 @@ class TestContentsConsistency(unittest.TestCase):
                             lbr + lbe.join([g.serialize(format='n3').decode("utf-8") for g in
                                             rdflib.compare.graph_diff(result,
                                                                       expected)[1:]]))
-                        
 
 with open('prodRegister', 'r') as fh:
     rooturl = fh.read().split('\n')[0]
@@ -97,14 +99,20 @@ with open('prodRegister', 'r') as fh:
 # Ensure that all TTL content is built from the input tables.
 
 makeG2.main()
-makeRels.main()
+release_ids = makeRels.main()
 
 # Build test cases based on the TTL files within the repository,
 # one test case per file.
-for f in glob.glob('**/*.ttl', recursive=True):    
+for f in glob.glob('**/*.ttl', recursive=True):
+    release_file = False
+    # release files with registerItem are tested differently
+    if os.path.basename(f).startswith('_'):
+        release_file = True
     relf = f.replace('.ttl', '')
     identity = '{}/{}'.format(rooturl, relf)
 
+    # test generator, returning a test case suitable
+    # for running as python unittest
     def make_a_test(infile):
         identityURI = copy.copy(identity)
         def entity_exists(self):
@@ -123,8 +131,11 @@ for f in glob.glob('**/*.ttl', recursive=True):
                 self.assertEqual(regr.status_code, 200, msg)
         return entity_exists
     tname = 'test_exists_{}'.format(relf.replace('/', '_'))
+    # add test case for content file to test class
     setattr(TestContentsConsistency, tname, make_a_test(f))
 
+    # test generator, returning a test case suitable
+    # for running as python unittest
     def make_another_test(infile):
         identityURI = copy.copy(identity)
         def entity_consistent(self):
@@ -137,36 +148,35 @@ for f in glob.glob('**/*.ttl', recursive=True):
                 assert(regr.status_code == 200), msg
             if regr.status_code == 200:
                 result_rdfgraph = rdflib.Graph()
-                # print(identityURI)
+
                 result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
                 expected = session.get(identityURI, headers=headers)
                 expected_rdfgraph = rdflib.Graph()
                 expected_rdfgraph.parse(data=expected.text, format='n3')
                 if os.path.exists(identityURI.split(rooturl)[1].lstrip('/')):
-                    # add in member relations from tree
-                    # col_id, = result_rdfgraph.subjects(rdflib.RDF.type, rdflib.namespace.SKOS.Collection)
+                    # remove member entites from expected (tested elsewhere)
+
                     for fname in glob.glob('{}/*.ttl'.format(identityURI.split(rooturl)[1].lstrip('/'))):
                         member_id = rdflib.term.URIRef(u'{}/{}'.format(identityURI, fname.split('/')[-1].split('.ttl')[0]))
-                        #result_rdfgraph.add((col_id, rdflib.namespace.SKOS.member, member_id))
+                        expected_rdfgraph.remove((None, rdflib.term.URIRef('http://purl.org/linked-data/registry#subregister'), None))
                         expected_rdfgraph.remove((member_id, None, None))
-                        #expected_rdfgraph.remove((None, rdflib.namespace.RDFS.member, None))
-                        #expected_rdfgraph.remove((None, rdflib.term.URIRef('http://purl.org/linked-data/registry#subregister'), None))
-                # print(expected)
+
+                        for r in release_ids:
+                            if r in fname:
+                                member_id = rdflib.term.URIRef(u'{}/{}'.format(identityURI.replace(r+'/', ''), fname.split('/')[-1].split('.ttl')[0].lstrip('_')))
+                                expected_rdfgraph.remove((member_id, None, None))
+
                 # do not check version info or date modified (owned by registry)
                 expected_rdfgraph.remove((None, rdflib.namespace.DCTERMS.modified, None))
                 expected_rdfgraph.remove((None, rdflib.namespace.OWL.versionInfo, None))
-                # print(expected)
                 self.check_result(result_rdfgraph, expected_rdfgraph, uploads,
                                   identityURI)
         return entity_consistent
 
-    # skip uncheckable content, e.g. container registers
-    # print(f)
-    # if f in ['grib/grib2/mo--74/4.2.ttl', 'grib/grib2/mo--74/4.5.ttl']:
-    #     continue
-
-    tname = 'test_consistent_{}'.format(relf.replace('/', '_'))
-    setattr(TestContentsConsistency, tname, make_another_test(f))
+    if not release_file:
+        tname = 'test_consistent_{}'.format(relf.replace('/', '_'))
+    # add test case for content file to test class
+        setattr(TestContentsConsistency, tname, make_another_test(f))
 
 
 if __name__ == '__main__':

@@ -68,6 +68,9 @@ def put_uploads(session, rootURL, uploads):
     for putfile in uploads:
         with open('.{}'.format(putfile), 'r', encoding="utf-8") as pf:
             pdata = pf.read()
+        if os.path.basename(putfile).startswith('_'):
+            putfile = os.path.join(os.path.dirname(putfile),
+                                   os.path.basename(putfile).lstrip('_'))
         relID = putfile.replace('.ttl', '')
         url = '{}{}'.format(rootURL, relID)
         print(url)
