@@ -19,11 +19,11 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 431,dust mass mixing ratio division 1,,kg/kg,0,13,193
 432,dust mass mixing ratio division 2,,kg/kg,0,13,194
 21104,total lightning flash density,,m-2 s-1,0,17,192
-3318,primary deciduous trees,,1,2,0,192
-3318,primary evergreen trees,,1,2,0,193
-3318,natural grasses of C3 plant functional types,,1,2,0,194
-3318,natural grasses of C4 plant functional types,,1,2,0,195
-3318,shrubs,,1,2,0,196
+3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
+3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
+3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
+3318,leaf area index of natural grasses of C4 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,195
+3318,leaf area index of shrubs,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,196
 6071,2nd swell period,,s,10,0,193
 6073,2nd swell direction,,degrees,10,0,194
 6070,2nd swell height,,m,10,0,195
