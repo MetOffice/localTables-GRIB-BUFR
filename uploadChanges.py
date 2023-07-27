@@ -51,6 +51,20 @@ def put(session, url, payload):
     if response.status_code != 200:
         raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
     res = session.put(url, headers=headers, data=payload.encode("utf-8"))
+    print('\t' + str(res.status_code))
+    if res.status_code != 204:
+        print('\t' + res.text)
+
+def put_non_member(session, url, payload):
+    headers={'Content-type':'text/turtle', 'charset':'utf-8'}
+    response = session.get(url, headers=headers)
+    if response.status_code != 200:
+        raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
+    res = session.put(url + '?non-member-properties', headers=headers,
+                      data=payload.encode("utf-8"))
+    print('\t' + str(res.status_code))
+    if res.status_code != 204:
+        print('\t' + res.text)
 
 def post_uploads(session, rootURL, uploads):
     for postfile in uploads:
@@ -74,7 +88,11 @@ def put_uploads(session, rootURL, uploads):
         relID = putfile.replace('.ttl', '')
         url = '{}{}'.format(rootURL, relID)
         print(url)
-        put(session, url, pdata)
+        if os.path.exists('.{}'.format(putfile.replace('.ttl', ''))):
+            # then it is a register, so, only non-member-properties can be PUT
+            put_non_member(session, url, pdata)
+        else:
+            put(session, url, pdata)
 
 if __name__ == '__main__':
     with open('prodRegister', 'r', encoding='utf-8') as fh:
