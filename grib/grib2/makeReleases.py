@@ -55,10 +55,9 @@ def build_release_content(content_root, release_id, relno, rdate, omissions,
     core_path = 'mo--74'
     root_path = os.path.join(content_root, core_path, release_id)
     release_paths = [os.path.join(content_root, core_path, r) for r in releases]
+    omissions = [os.path.join(content_root, o + '.ttl') for o in omissions]
     if not os.path.exists(root_path):
         os.mkdir(root_path)
-        with open(root_path + '.ttl', 'w') as rf:
-            rf.write(release.format(**{'rel':release_id,'relno':relno, 'rdate':rdate}))
         for ttlf in glob.glob('**/*.ttl', recursive=True):
             ttlfp = os.path.abspath(ttlf)
             # skip encoded releases
@@ -71,12 +70,18 @@ def build_release_content(content_root, release_id, relno, rdate, omissions,
                 newf = root_path + ttlfp.replace(os.path.join(content_root, core_path), '')
                 if not os.path.exists(os.path.dirname(newf)):
                     os.mkdir(os.path.dirname(newf))
-                with open(newf, 'w') as fh:
-                    with open(ttlfp) as inp:
-                        inpc = inp.read()
-                    if os.path.exists(ttlfp.replace('.ttl', '')):
-                        fh.write(inpc)
-                    else:
+                if os.path.exists(ttlfp.replace('.ttl', '')):
+                    with open(newf, 'w') as fh:
+                        with open(ttlfp) as inp:
+                            inpc = inp.read()
+                            fh.write(inpc)
+                # write redirection release ttl files to filename with
+                # leading underscore to denote regItem for testing 
+                else:
+                    newf = os.path.join(os.path.dirname(newf), '_' + os.path.basename(newf))
+                    with open(newf, 'w') as fh:
+                        with open(ttlfp) as inp:
+                            inpc = inp.read()
                         m = lstr.match(inpc)
                         label = ''
                         if m is not None:
@@ -84,6 +89,11 @@ def build_release_content(content_root, release_id, relno, rdate, omissions,
                         fh.write(riTemplate.format(**{'uri': ttlf.replace('.ttl', ''),
                                                       'not': os.path.basename(ttlf).replace('.ttl', ''),
                                                       'label': label}))
+        # write the relese definition ttl file last, to avoid double writing
+        # newf copies of individual register definitions
+        with open(root_path + '.ttl', 'w') as rf:
+            rf.write(release.format(**{'rel':release_id,'relno':relno, 'rdate':rdate}))
+
 
 def parseReleaseDefs(content_root):
     with open(os.path.join(content_root, 'releases.csv')) as relf:
@@ -100,14 +110,16 @@ def parseReleaseDefs(content_root):
             build_release_content(content_root, rel.get('release'),
                                   rel.get('notation'), rel.get('date'),
                                   rel.get('omissions(|)').split('|'), releases)
+    return releases
 
 def main():
     content_root = os.path.dirname(os.path.abspath(__file__))
     if not os.path.exists(content_root):
         raise valueError('content root missing: {}'.format(content_root))
-    parseReleaseDefs(content_root)
+    releases = parseReleaseDefs(content_root)
     #omissions, release_id = parse_arguments(content_root)
     #build_release_content(content_root, release_id, omissions)
+    return releases
     
 if __name__ == '__main__':
     main()

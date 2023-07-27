@@ -21,7 +21,7 @@ based on the relative path of the .ttl file.
 def authenticate(session, base, userid, pss):
     auth = session.post('{}/system/security/apilogin'.format(base),
                         data={'userid':userid,
-                                'password':pss}, verify=False)
+                                'password':pss})
     if not auth.status_code == 200:
         raise ValueError('auth failed')
 
@@ -35,39 +35,43 @@ def parse_uploads(uploads):
                          "{}".format(result.keys()))
     return result
 
-def post(session, url, payload):
+def post(session, url, payload, targeturl):
     headers={'Content-type':'text/turtle', 'charset':'utf-8'}
-    response = session.get(url, headers=headers, verify=False)
-    if response.status_code != 200:
+    response = session.get(targeturl, headers=headers)
+    if response.status_code == 200:
         raise ValueError('Cannot POST to {}, it exists.'.format(url))
     params = {'status':'experimental'}
-    res = session.post(url, headers=headers, data=payload.encode("utf-8"), params=params, verify=False)
+    res = session.post(url, headers=headers, data=payload.encode("utf-8"), params=params)
     if res.status_code != 201:
         print('POST failed with {}\n{}'.format(res.status_code, res.reason))
 
 def put(session, url, payload):
     headers={'Content-type':'text/turtle', 'charset':'utf-8'}
-    response = session.get(url, headers=headers, verify=False)
+    response = session.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError('Cannot PUT to {}, it does not exist.'.format(url))
-    res = session.put(url, headers=headers, data=payload.encode("utf-8"), verify=False)
+    res = session.put(url, headers=headers, data=payload.encode("utf-8"))
 
 def post_uploads(session, rootURL, uploads):
     for postfile in uploads:
         with open('.{}'.format(postfile), 'r', encoding="utf-8") as pf:
             pdata = pf.read()
         # post, so remove last part of identity, this is in the payload
-        relID = postfile.rstrip('.ttl')
+        targetrelID = postfile.replace('.ttl', '')
         relID = '/'.join(postfile.split('/')[:-1])
         url = '{}{}'.format(rootURL, relID)
+        targeturl = '{}{}'.format(rootURL, targetrelID)
         print(url)
-        post(session, url, pdata)
+        post(session, url, pdata, targeturl)
 
 def put_uploads(session, rootURL, uploads):
     for putfile in uploads:
         with open('.{}'.format(putfile), 'r', encoding="utf-8") as pf:
             pdata = pf.read()
-        relID = putfile.rstrip('.ttl')
+        if os.path.basename(putfile).startswith('_'):
+            putfile = os.path.join(os.path.dirname(putfile),
+                                   os.path.basename(putfile).lstrip('_'))
+        relID = putfile.replace('.ttl', '')
         url = '{}{}'.format(rootURL, relID)
         print(url)
         put(session, url, pdata)
