@@ -84,13 +84,18 @@ class TestContentsConsistency(unittest.TestCase):
         except AssertionError:
             ufile = '{}.ttl'.format(identityURI.split(rooturl)[1])
             uploads['PUT'].append(ufile)
+        msg = lbr + lbe.join([g.serialize(format='n3') for g in
+                              rdflib.compare.graph_diff(result, expected)])
+        # Alternative code for older versions of rdflib:
+        # msg = lbr + lbe.join([g.serialize(format='n3').decode("utf-8") for
+        #                       g in
+        #                       rdflib.compare.graph_diff(result,expected)[1:]])
+
         if nofails:
             self.assertTrue(True)
         else:
-            self.assertTrue(rdflib.compare.isomorphic(result, expected),
-                            lbr + lbe.join([g.serialize(format='n3').decode("utf-8") for g in
-                                            rdflib.compare.graph_diff(result,
-                                                                      expected)[1:]]))
+            self.assertTrue(rdflib.compare.isomorphic(result, expected), msg)
+
 
 with open('prodRegister', 'r') as fh:
     rooturl = fh.read().split('\n')[0]
@@ -139,17 +144,18 @@ for f in glob.glob('**/*.ttl', recursive=True):
     def make_another_test(infile):
         identityURI = copy.copy(identity)
         def entity_consistent(self):
-            headers={'Accept':'text/turtle'}
+            headers={'Accept':'text/turtle',
+                     'Cache-Control': 'private, no-store, no-cache'}
             regr = session.get(identityURI, headers=headers)
             ufile = '{}.ttl'.format(identityURI.split(rooturl)[1].lstrip('/'))
+            result_rdfgraph = rdflib.Graph()
+
+            result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
             if not nofails:
                 msg = '{} returned {} not 200'.format(identityURI,
                                                       regr.status_code)
                 assert(regr.status_code == 200), msg
             if regr.status_code == 200:
-                result_rdfgraph = rdflib.Graph()
-
-                result_rdfgraph.parse(ufile, publicID=identityURI, format='n3')
                 expected = session.get(identityURI, headers=headers)
                 expected_rdfgraph = rdflib.Graph()
                 expected_rdfgraph.parse(data=expected.text, format='n3')
