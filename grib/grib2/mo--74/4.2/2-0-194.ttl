@@ -3,7 +3,7 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
 <2-0-194> a skos:Concept ;
-	rdfs:label "natural grasses of C3 plant functional types"@en ;
+	rdfs:label " leaf area index of natural grasses of C3 plant functional types"@en ;
 	<http://metarelate.net/vocabulary/index.html#identifier> 	<http://codes.wmo.int/def/common/edition> , 	<http://codes.wmo.int/def/common/centre> , 	<http://codes.wmo.int/def/grib2/discipline> , 	<http://codes.wmo.int/def/grib2/parameter> , 	<http://codes.wmo.int/def/grib2/category> ;
 	<http://codes.wmo.int/def/common/centre> <http://codes.wmo.int/common/centre/74> ;
 	<http://codes.wmo.int/def/common/edition> <http://codes.wmo.int/codeform/grib2> ;
@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/2> ;
 	<http://codes.wmo.int/def/grib2/parameter> 194 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s03i318> ;
+	dct:description "Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants."@en ;
 	.
