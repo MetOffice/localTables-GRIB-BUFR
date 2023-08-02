@@ -13,3 +13,23 @@ If you would like to request a new addition to the Met Office local tables, plea
 
 
 
+## Workflows
+
+There are 2 automated work flows triggering repository actions:
+
+* on Pull Request (and change to PR):
+    * check-consistency
+    * builds the turtle (ttl) files from the csv tables and evaluates changes required for published content
+        * this should pass, unless there are content build errors
+        * checking the action log to confirm that the proposed changes are as expected is useful and important
+* on merge to `master`
+    * pre-commit-hook-on-master
+    * merges the branch onto master
+    * reruns all of the check-consistency code
+    * adds the new turtle(ttl) content to master as a github action commit
+    * publishes new and changed content to the registry
+        * this uses action secrets, ensure the full URI username and a token are entered in the action secrets in settings 
+    * note, if the push to master fails then it's best not to just rerun the pipeline
+        * this is because the pipeline pushes an action commit to master, which will then conflict with a rerun (expected)
+    * if there are failures (e.g. registry authentication) it is safer to create a new branch & PR from the master branch, and create a new PR for the managed publish to the registry
+        * (a content free change to this readme (e.g. a space) provides a useful null-commit if needed)
