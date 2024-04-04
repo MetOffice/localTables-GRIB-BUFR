@@ -4,7 +4,7 @@
 @prefix reg:   <http://purl.org/linked-data/registry#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
-<4.5> a reg:Register , skos:ConceptScheme , ldp:Container  ;
+<4.201> a reg:Register , skos:ConceptScheme , ldp:Container  ;
 	ldp:isMemberOfRelation skos:inScheme ;
 	rdfs:label "Met Office Local Table Precipitation Type Definitions"@en ;
 	dct:description "Met Office Local Table Precipitation Type definitions Extending WMO GRIB2 code table 4.201."@en .
