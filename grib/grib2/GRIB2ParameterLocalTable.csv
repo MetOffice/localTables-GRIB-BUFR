@@ -16,14 +16,16 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 20111,CIN mixed layer in lowest 500m,,J/kg,0,7,195
 20058,dust concentration,,g/m3,0,13,192
 20059,dust concentration,,g/m3,0,13,192
-,dust mass mixing ratio (0.2-4.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.2 - 4.0 microns in diameter.,kg/kg,0,13,193
-,dust mass mixing ratio (4.0-20.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 4.0 - 20.0 microns in diameter.,kg/kg,0,13,194
-,dust mass mixing ratio (0.03-0.1 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.03 - 0.1 microns in diameter.,kg/kg,0,13,195
-,dust mass mixing ratio (0.1-0.3 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.1 - 0.3 microns in diameter.,kg/kg,0,13,196
-,dust mass mixing ratio (0.3-1.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.3 - 1.0 microns in diameter.,kg/kg,0,13,197
-,dust mass mixing ratio (1.0-3.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 1.0 - 3.0 microns in diameter.,kg/kg,0,13,198
-,dust mass mixing ration (3.0-10.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 3.0 - 10.0 microns in diameter.,kg/kg,0,13,199
-,dust mass mixing ration (10.0-30.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 10.0 - 30.0 microns in diameter.,kg/kg,0,13,200
+431,dust mass mixing ratio division 1,,kg/kg,0,13,193
+432,dust mass mixing ratio division 2,,kg/kg,0,13,194
+431,dust mass mixing ratio (0.2-4.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.2 - 4.0 microns in diameter.,kg/kg,0,20,192
+432,dust mass mixing ratio (4.0-20.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 4.0 - 20.0 microns in diameter.,kg/kg,0,20,193
+431,dust mass mixing ratio (0.03-0.1 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.03 - 0.1 microns in diameter.,kg/kg,0,20,194
+432,dust mass mixing ratio (0.1-0.3 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.1 - 0.3 microns in diameter.,kg/kg,0,20,195
+433,dust mass mixing ratio (0.3-1.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 0.3 - 1.0 microns in diameter.,kg/kg,0,20,196
+434,dust mass mixing ratio (1.0-3.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 1.0 - 3.0 microns in diameter.,kg/kg,0,20,197
+435,dust mass mixing ration (3.0-10.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 3.0 - 10.0 microns in diameter.,kg/kg,0,20,198
+436,dust mass mixing ration (10.0-30.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 10.0 - 30.0 microns in diameter.,kg/kg,0,20,199
 21104,total lightning flash density,,m-2 s-1,0,17,192
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
