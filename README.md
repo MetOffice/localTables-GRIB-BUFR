@@ -32,4 +32,4 @@ There are 2 automated work flows triggering repository actions:
     * note, if the push to master fails then it's best not to just rerun the pipeline
         * this is because the pipeline pushes an action commit to master, which will then conflict with a rerun (expected)
     * if there are failures (e.g. registry authentication) it is safer to create a new branch & PR from the master branch, and create a new PR for the managed publish to the registry
-        * (a content free change to this readme (e.g. a space) provides a useful null-commit if needed) 
+        * (a content free change to this readme (e.g. a space) provides a useful null-commit if needed)
