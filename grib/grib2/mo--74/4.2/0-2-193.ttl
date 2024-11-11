@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
 	<http://codes.wmo.int/def/grib2/parameter> 193 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s03i226> ;
+	dct:description "The component of the horizontal wind towards the North (Meridional)."@en ;
 	.

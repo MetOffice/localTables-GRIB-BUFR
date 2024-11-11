@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
 	<http://codes.wmo.int/def/grib2/parameter> 192 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s16i205> ;
+	dct:description "Wet bulb potential temperature is defined as the temperature that a parcel of air would have if it were brought down to the standard pressure of 1000hPa following a saturated adiabatic lapse rate."@en ;
 	.

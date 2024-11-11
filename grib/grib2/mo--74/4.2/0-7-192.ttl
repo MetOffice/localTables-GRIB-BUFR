@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
 	<http://codes.wmo.int/def/grib2/parameter> 192 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s20i112> ;
+	dct:description "CAPE (Convective Available Potential Energy) calculated for the most unstable parcel where the most unstable parcel is defined as the parcel with the highest fixed level CAPE launched from any level (including screen-level=1.5m) within 500hPa of the surface pressure."@en ;
 	.

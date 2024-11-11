@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
 	<http://codes.wmo.int/def/grib2/parameter> 195 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s09i218> ;
+	dct:description "Fraction of horizontal grid square occupied by cloud below 1000 feet above sea level."@en ;
 	.

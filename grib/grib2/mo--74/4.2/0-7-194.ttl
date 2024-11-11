@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
 	<http://codes.wmo.int/def/grib2/parameter> 194 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s20i113> ;
+	dct:description "Convective Inhibition calculated as the additional energy required to lift the most unstable parcel to its level of free convection. Where most unstable parcel is defined as the parcel with the highest fixed-level CAPE launched from any level (including screen-level) within 500 hPa of the surface pressure."@en ;
 	.

@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
 	<http://codes.wmo.int/def/grib2/parameter> 193 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s20i110> ;
+	dct:description "CAPE (Convective Available Potential Energy) calculated for a mixed layer parcel where a mixed layer parcel is defined as a parcel with thermodynamic properties of the density-weighted mean of the lowest 500 m above ground level."@en ;
 	.

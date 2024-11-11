@@ -12,4 +12,5 @@
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
 	<http://codes.wmo.int/def/grib2/parameter> 195 ;
 	skos:related <http://reference.metoffice.gov.uk/um/stash/m01s20i111> ;
+	dct:description "Convective Inhibition calculated as the additional energy required to lift a mixed-layer parcel to its level of free convection. Where a mixed layer parcel is defined as parcel with thermodynamic properties of the density weighted mean of the lowest 500 m above ground level (AGL)."@en ;
 	.
