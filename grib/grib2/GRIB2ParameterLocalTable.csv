@@ -27,6 +27,11 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 435,dust mass mixing ratio (3.0-10.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 3.0 - 10.0 microns in diameter.,kg/kg,0,20,198
 436,dust mass mixing ratio (10.0-30.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 10.0 - 30.0 microns in diameter.,kg/kg,0,20,199
 21104,total lightning flash density,,m-2 s-1,0,17,192
+,large scale rain rate unsmoothed orography,large scale rain rate unsmoothed orography,kg/m2s,0,1,193
+,large scale snowfall rate water equivalent unsmoothed orography,large scale snowfall rate water equivalent unsmoothed orography,kg/m2s,0,1,194
+,precipitation type unsmoothed orography, precipitation type unsmoothed orography,1,0,1,195
+,total snowfall rate water equivalent unsmoothed orography,total snowfall rate water equivalent unsmoothed orography, kg/m2s,0,1,196
+,rain precipitation rate unsmoothed orography, rain precipitation rate unsmoothed orography,kg/m2s,0,1,197
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
