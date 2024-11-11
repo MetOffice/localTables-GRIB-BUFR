@@ -1,19 +1,19 @@
 STASH code,Parameter,Description,Unit,Discipline,Category,Number
-16205,wet bulb potential temperature,,K,0,0,192
-254,cloud water mixing ratio,,kg/kg,0,1,192
-3225,u component of wind (surface adjusted),,m/s,0,2,192
-3226,v component of wind (surface adjusted),,m/s,0,2,193
+16205,wet bulb potential temperature,Wet bulb potential temperature is defined as the temperature that a parcel of air would have if it were brought down to the standard pressure of 1000hPa following a saturated adiabatic lapse rate.,K,0,0,192
+254,cloud water mixing ratio,Ratio of the mass of liquid water to the mass of dry air.,kg/kg,0,1,192
+3225,u component of wind (surface adjusted),The component of the horizontal wind towards the East (Zonal).,m/s,0,2,192
+3226,v component of wind (surface adjusted),The component of the horizontal wind towards the North (Meridional).,m/s,0,2,193
 3225,wind direction (from which blowing) (surface adjusted),,degrees,0,2,194
 3226,wind speed (surface adjusted),,m/s,0,2,195
 ,geometric altitude above mean sea level,,m,0,3,192
 ,geometric height above ground level,,m,0,3,193
-1213,upward UV radiation,,W/m2,0,4,192
-9210,height of lowest cloud base greater than 2.5 oktas,,kft,0,6,192
-9218,cloud amount below 1000 feet ASL,,%,0,6,195
-20112,CAPE most unstable below 500hPa,,J/kg,0,7,192
-20110,CAPE mixed layer in lowest 500m,,J/kg,0,7,193
-20113,CIN most unstable below 500hPa,,J/kg,0,7,194
-20111,CIN mixed layer in lowest 500m,,J/kg,0,7,195
+1213,upward UV radiation,Ultaviolet radiation at the surface directed away from the ground.,W/m2,0,4,192
+9210,height of lowest cloud base greater than 2.5 oktas,Height of the base of the lowest cloud above sea level where there is at least 2.5 oktas (eighths) of cloud cover. This is also referred to as the altitude of the cloud base or (geometric) height above the geoid which is the reference geopotential surface.,kft,0,6,192
+9218,cloud amount below 1000 feet ASL,Fraction of horizontal grid square occupied by cloud below 1000 feet above sea level.,%,0,6,195
+20112,CAPE most unstable below 500hPa,CAPE (Convective Available Potential Energy) calculated for the most unstable parcel where the most unstable parcel is defined as the parcel with the highest fixed level CAPE launched from any level (including screen-level=1.5m) within 500hPa of the surface pressure.,J/kg,0,7,192
+20110,CAPE mixed layer in lowest 500m,CAPE (Convective Available Potential Energy) calculated for a mixed layer parcel where a mixed layer parcel is defined as a parcel with thermodynamic properties of the density-weighted mean of the lowest 500 m above ground level.,J/kg,0,7,193
+20113,CIN most unstable below 500hPa,Convective Inhibition calculated as the additional energy required to lift the most unstable parcel to its level of free convection. Where most unstable parcel is defined as the parcel with the highest fixed-level CAPE launched from any level (including screen-level) within 500 hPa of the surface pressure.,J/kg,0,7,194
+20111,CIN mixed layer in lowest 500m,Convective Inhibition calculated as the additional energy required to lift a mixed-layer parcel to its level of free convection. Where a mixed layer parcel is defined as parcel with thermodynamic properties of the density weighted mean of the lowest 500 m above ground level (AGL).,J/kg,0,7,195
 20058,dust concentration,,g/m3,0,13,192
 20059,dust concentration,,g/m3,0,13,192
 431,dust mass mixing ratio division 1,,kg/kg,0,13,193
@@ -37,18 +37,18 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
 3318,leaf area index of natural grasses of C4 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,195
 3318,leaf area index of shrubs,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,196
-6071,2nd swell period,,s,10,0,193
-6073,2nd swell direction,,degrees,10,0,194
-6070,2nd swell height,,m,10,0,195
-6074,2nd swell mean directional spread,,degrees,10,0,196
-6081,3rd swell period,,m,10,0,197
-6083,3rd swell direction,,degrees,10,0,198
-6080,3rd swell height,,m,10,0,199
-6084,3rd swell mean directional spread,,degrees,10,0,200
-6110,wind sea energy at peak frequency,,m2/Hz/rad,10,0,201
-6120,swell energy at peak frequency,,m2/Hz/rad,10,0,202
-6130,2nd swell energy at peak frequency,,m2/Hz/rad,10,0,203
-6140,3rd swell energy at peak frequency,,m2/Hz/rad,10,0,204
+6071,2nd swell period,Secondary swell period,s,10,0,193
+6073,2nd swell direction,Secondary swell direction,degrees,10,0,194
+6070,2nd swell height,Secondary swell height,m,10,0,195
+6074,2nd swell mean directional spread,Secondary swell mean directional spread,degrees,10,0,196
+6081,3rd swell period,Tertiary swell period,m,10,0,197
+6083,3rd swell direction,Tertiary swell direction,degrees,10,0,198
+6080,3rd swell height,Tertiary swell height,m,10,0,199
+6084,3rd swell mean directional spread,Tertiary swell mean directional spread,degrees,10,0,200
+6110,wind sea energy at peak frequency,Energy density at wind wave spectral maximum,m2/Hz/rad,10,0,201
+6120,swell energy at peak frequency,Energy density at primary swell wave spectral maximum,m2/Hz/rad,10,0,202
+6130,2nd swell energy at peak frequency,Energy density at secondary swell wave spectral maximum,m2/Hz/rad,10,0,203
+6140,3rd swell energy at peak frequency,Energy density at tertiary swell wave spectral maximum,m2/Hz/rad,10,0,204
 151,tide current speed,,m s-1,10,1,192
 152,tide current direction,,degrees,10,1,193
 ,depth Max Current,The depth at which the maximum current occurs.,m,10,1,194
