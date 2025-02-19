@@ -1,5 +1,6 @@
 STASH code,Parameter,Description,Unit,Discipline,Category,Number
 16205,wet bulb potential temperature,Wet bulb potential temperature is defined as the temperature that a parcel of air would have if it were brought down to the standard pressure of 1000hPa following a saturated adiabatic lapse rate.,K,0,0,192
+,feels like temperature, The temperature it feels like, taking into account humidity and wind chill but not radiation.,K,0,0,193
 254,cloud water mixing ratio,Ratio of the mass of liquid water to the mass of dry air.,kg/kg,0,1,192
 3225,u component of wind (surface adjusted),The component of the horizontal wind towards the East (Zonal).,m/s,0,2,192
 3226,v component of wind (surface adjusted),The component of the horizontal wind towards the North (Meridional).,m/s,0,2,193
@@ -32,6 +33,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,precipitation type unsmoothed orography, precipitation type unsmoothed orography,1,0,1,195
 ,total snowfall rate water equivalent unsmoothed orography,total snowfall rate water equivalent unsmoothed orography, kg/m2s,0,1,196
 ,rain precipitation rate unsmoothed orography, rain precipitation rate unsmoothed orography,kg/m2s,0,1,197
+,sleetfall rate, sleetfall rate, kg/m2s,0,1,198
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
