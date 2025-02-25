@@ -34,11 +34,17 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,total snowfall rate water equivalent unsmoothed orography,total snowfall rate water equivalent unsmoothed orography, kg/m2s,0,1,196
 ,rain precipitation rate unsmoothed orography, rain precipitation rate unsmoothed orography,kg/m2s,0,1,197
 ,sleetfall rate, sleetfall rate, kg/m2s,0,1,198
+,extreme precipitation rate in last 12 hours in vicinity of 14km,,kg/m2s,0,1,199
+,extreme precipitation rate in last 24 hours in vicinity of 14km,,kg/m2s,0,1,200
+,extreme precipitation rate in last 12 hours in vicinity of 30km,,kg/m2s,0,1,201
+,extreme precipitation rate in last 24 hours in vicinity of 30km,,kg/m2s,0,1,202
+,precipitation rate in vicinity of 10km,,kg/m2s,0,1,203
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
 3318,leaf area index of natural grasses of C4 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,195
 3318,leaf area index of shrubs,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,196
+,lightning flash rate in vicinity of 10km,,m-2 s-1,0,17,193
 6071,2nd swell period,Secondary swell period,s,10,0,193
 6073,2nd swell direction,Secondary swell direction,degrees,10,0,194
 6070,2nd swell height,Secondary swell height,m,10,0,195
@@ -48,6 +54,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 6080,3rd swell height,Tertiary swell height,m,10,0,199
 6084,3rd swell mean directional spread,Tertiary swell mean directional spread,degrees,10,0,200
 6110,wind sea energy at peak frequency,Energy density at wind wave spectral maximum,m2/Hz/rad,10,0,201
+,visibility at screen level in vicinity of 10km,,m,0,19,193
 6120,swell energy at peak frequency,Energy density at primary swell wave spectral maximum,m2/Hz/rad,10,0,202
 6130,2nd swell energy at peak frequency,Energy density at secondary swell wave spectral maximum,m2/Hz/rad,10,0,203
 6140,3rd swell energy at peak frequency,Energy density at tertiary swell wave spectral maximum,m2/Hz/rad,10,0,204
