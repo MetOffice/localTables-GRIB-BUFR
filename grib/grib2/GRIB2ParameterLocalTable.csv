@@ -8,7 +8,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 3226,wind speed (surface adjusted),,m/s,0,2,195
 ,wind gust (stability adjusted),Stability adjusted wind speed of gusts.,m/s,0,2,196
 ,wind gust (10m ratio), ,m/s,0,2,197
-,wind gust (10m land ratio), m/s,0,2,198
+,wind gust (10m land ratio),,m/s,0,2,198
 ,geometric altitude above mean sea level,,m,0,3,192
 ,geometric height above ground level,,m,0,3,193
 1213,upward UV radiation,Ultaviolet radiation at the surface directed away from the ground.,W/m2,0,4,192
