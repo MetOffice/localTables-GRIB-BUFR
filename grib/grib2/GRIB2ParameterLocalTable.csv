@@ -33,7 +33,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 21104,total lightning flash density,,m-2 s-1,0,17,192
 ,large scale rain rate unsmoothed orography,large scale rain rate unsmoothed orography,kg/m2s,0,1,193
 ,large scale snowfall rate water equivalent unsmoothed orography,large scale snowfall rate water equivalent unsmoothed orography,kg/m2s,0,1,194
-,precipitation type unsmoothed orography, precipitation type unsmoothed orography,1,0,1,195
+,precipitation type unsmoothed orography,precipitation type unsmoothed orography,(Code table 4.201),0,1,195
 ,total snowfall rate water equivalent unsmoothed orography,total snowfall rate water equivalent unsmoothed orography, kg/m2s,0,1,196
 ,rain precipitation rate unsmoothed orography, rain precipitation rate unsmoothed orography,kg/m2s,0,1,197
 ,sleetfall rate, sleetfall rate, kg/m2s,0,1,198
