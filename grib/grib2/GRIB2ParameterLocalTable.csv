@@ -42,6 +42,8 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,extreme precipitation rate in last 12 hours in vicinity of 30km,,kg/m2s,0,1,201
 ,extreme precipitation rate in last 24 hours in vicinity of 30km,,kg/m2s,0,1,202
 ,precipitation rate in vicinity of 10km,,kg/m2s,0,1,203
+,probability of precipitation as snow unsmoothed orography,The mean probability of precipitation falling as snow on unsmoothed orography.,%,0,1,204
+,diameter of hail stones,,m,0,1,205
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
