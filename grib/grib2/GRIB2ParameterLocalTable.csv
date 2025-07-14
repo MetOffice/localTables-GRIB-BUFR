@@ -6,6 +6,9 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 3226,v component of wind (surface adjusted),The component of the horizontal wind towards the North (Meridional).,m/s,0,2,193
 3225,wind direction (from which blowing) (surface adjusted),,degrees,0,2,194
 3226,wind speed (surface adjusted),,m/s,0,2,195
+,wind gust (stability adjusted),Stability adjusted wind speed of gusts.,m/s,0,2,196
+,wind gust (10m ratio), ,m/s,0,2,197
+,wind gust (10m land ratio),,m/s,0,2,198
 ,geometric altitude above mean sea level,,m,0,3,192
 ,geometric height above ground level,,m,0,3,193
 1213,upward UV radiation,Ultaviolet radiation at the surface directed away from the ground.,W/m2,0,4,192
@@ -30,7 +33,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 21104,total lightning flash density,,m-2 s-1,0,17,192
 ,large scale rain rate unsmoothed orography,large scale rain rate unsmoothed orography,kg/m2s,0,1,193
 ,large scale snowfall rate water equivalent unsmoothed orography,large scale snowfall rate water equivalent unsmoothed orography,kg/m2s,0,1,194
-,precipitation type unsmoothed orography, precipitation type unsmoothed orography,1,0,1,195
+,precipitation type unsmoothed orography,precipitation type unsmoothed orography,(Code table 4.201),0,1,195
 ,total snowfall rate water equivalent unsmoothed orography,total snowfall rate water equivalent unsmoothed orography, kg/m2s,0,1,196
 ,rain precipitation rate unsmoothed orography, rain precipitation rate unsmoothed orography,kg/m2s,0,1,197
 ,sleetfall rate, sleetfall rate, kg/m2s,0,1,198
@@ -39,6 +42,8 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,extreme precipitation rate in last 12 hours in vicinity of 30km,,kg/m2s,0,1,201
 ,extreme precipitation rate in last 24 hours in vicinity of 30km,,kg/m2s,0,1,202
 ,precipitation rate in vicinity of 10km,,kg/m2s,0,1,203
+,probability of precipitation as snow unsmoothed orography,The mean probability of precipitation falling as snow on unsmoothed orography.,%,0,1,204
+,diameter of hail stones,,m,0,1,205
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
@@ -55,6 +60,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 6084,3rd swell mean directional spread,Tertiary swell mean directional spread,degrees,10,0,200
 6110,wind sea energy at peak frequency,Energy density at wind wave spectral maximum,m2/Hz/rad,10,0,201
 ,visibility at screen level in vicinity of 10km,,m,0,19,193
+,superstructure ice,Superstructure icing refers to the accumulation of ice on the exposed parts of a structure in this case the superstructure of ships at sea.,(Code table 4.207),0,19,194
 6120,swell energy at peak frequency,Energy density at primary swell wave spectral maximum,m2/Hz/rad,10,0,202
 6130,2nd swell energy at peak frequency,Energy density at secondary swell wave spectral maximum,m2/Hz/rad,10,0,203
 6140,3rd swell energy at peak frequency,Energy density at tertiary swell wave spectral maximum,m2/Hz/rad,10,0,204
