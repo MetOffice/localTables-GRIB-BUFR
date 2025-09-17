@@ -9,8 +9,8 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,wind gust (stability adjusted),Stability adjusted wind speed of gusts.,m/s,0,2,196
 ,wind gust (10m ratio), ,m/s,0,2,197
 ,wind gust (10m land ratio),,m/s,0,2,198
-,wind vertical velocity maximum in vicinity of 30km,m/s,0,2,199
-,wind vertical velocity 98 percentile in vicinity of 30km,m/s,0,2,200
+,wind vertical velocity maximum in vicinity of 30km,wind vertical velocity maximum in vicinity of 30km,m/s,0,2,199
+,wind vertical velocity 98 percentile in vicinity of 30km,wind vertical velocity 98 percentile in vicinity of 30km,m/s,0,2,200
 ,geometric altitude above mean sea level,,m,0,3,192
 ,geometric height above ground level,,m,0,3,193
 1213,upward UV radiation,Ultaviolet radiation at the surface directed away from the ground.,W/m2,0,4,192
@@ -47,8 +47,8 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,probability of precipitation as snow unsmoothed orography,The mean probability of precipitation falling as snow on unsmoothed orography.,%,0,1,204
 ,diameter of hail stones,diameter of hail stones,m,0,1,205
 ,snow depth water equivalent change,snow depth water equivalent change,kg/m2,0,1,206
-,convective rain rate unsmoothed orography,kg/m2,0,1,207
-,total convective snowfall rate water equivalent unsmoothed orography,kg/m2,0,1,208
+,convective rain rate unsmoothed orography,convective rain rate unsmoothed orography,kg/m2,0,1,207
+,total convective snowfall rate water equivalent unsmoothed orography,total convective snowfall rate water equivalent unsmoothed orography,kg/m2,0,1,208
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
