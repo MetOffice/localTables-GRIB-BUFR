@@ -2,14 +2,14 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> . 
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
-<0-1-195> a skos:Concept ;
-	rdfs:label "precipitation type unsmoothed orography"@en ;
+<0-19-194> a skos:Concept ;
+	rdfs:label "superstructure icing"@en ;
 	<http://metarelate.net/vocabulary/index.html#identifier> 	<http://codes.wmo.int/def/common/edition> , 	<http://codes.wmo.int/def/common/centre> , 	<http://codes.wmo.int/def/grib2/discipline> , 	<http://codes.wmo.int/def/grib2/parameter> , 	<http://codes.wmo.int/def/grib2/category> ;
 	<http://codes.wmo.int/def/common/centre> <http://codes.wmo.int/common/centre/74> ;
 	<http://codes.wmo.int/def/common/edition> <http://codes.wmo.int/codeform/grib2> ;
-	<http://codes.wmo.int/def/common/unit> "(Code table 4.201)" ;
-	<http://codes.wmo.int/def/grib2/category> <http://codes.wmo.int/grib2/codeflag/4.1/0-1> ;
+	<http://codes.wmo.int/def/common/unit> "(Code table 4.207)" ;
+	<http://codes.wmo.int/def/grib2/category> <http://codes.wmo.int/grib2/codeflag/4.1/0-19> ;
 	<http://codes.wmo.int/def/grib2/discipline> <http://codes.wmo.int/grib2/codeflag/0.0/0> ;
-	<http://codes.wmo.int/def/grib2/parameter> 195 ;
-	dct:description "precipitation type unsmoothed orography"@en ;
+	<http://codes.wmo.int/def/grib2/parameter> 194 ;
+	dct:description "Superstructure icing refers to the accumulation of ice on the exposed parts of a structure in this case the superstructure of ships at sea. Ice accretion alters the centre of gravity of the ship and can affect the stability increasing the risk of capsize if unaddressed. The output is a categorical indication of the severity of icing predicted "@en ;
 	.

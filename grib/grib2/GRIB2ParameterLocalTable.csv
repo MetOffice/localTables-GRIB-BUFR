@@ -65,7 +65,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 6084,3rd swell mean directional spread,Tertiary swell mean directional spread,degrees,10,0,200
 6110,wind sea energy at peak frequency,Energy density at wind wave spectral maximum,m2/Hz/rad,10,0,201
 ,visibility at screen level in vicinity of 10km,,m,0,19,193
-,superstructure ice,Superstructure icing refers to the accumulation of ice on the exposed parts of a structure in this case the superstructure of ships at sea.,(Code table 4.207),0,19,194
+,superstructure icing,Superstructure icing refers to the accumulation of ice on the exposed parts of a structure in this case the superstructure of ships at sea. Ice accretion alters the centre of gravity of the ship and can affect the stability increasing the risk of capsize if unaddressed. The output is a categorical indication of the severity of icing predicted ,(Code table 4.207),0,19,194
 6120,swell energy at peak frequency,Energy density at primary swell wave spectral maximum,m2/Hz/rad,10,0,202
 6130,2nd swell energy at peak frequency,Energy density at secondary swell wave spectral maximum,m2/Hz/rad,10,0,203
 6140,3rd swell energy at peak frequency,Energy density at tertiary swell wave spectral maximum,m2/Hz/rad,10,0,204
@@ -73,5 +73,6 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 152,tide current direction,,degrees,10,1,193
 ,depth Max Current,The depth at which the maximum current occurs.,m,10,1,194
 150,non-tidal residual of sea level,,m,10,3,192
+,water potential temperature (theta),Water potential temperature (theta) at surface,K,10,3,193
 ,visibility of Ocean,"The Visibility of the Ocean, the light Secchi depth (1.7/Kd)",m,10,4,192
 ,visibility through dust,,m,0,19,192
