@@ -9,8 +9,8 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,wind gust (stability adjusted),Stability adjusted wind speed of gusts.,m/s,0,2,196
 ,wind gust (10m ratio), ,m/s,0,2,197
 ,wind gust (10m land ratio),,m/s,0,2,198
-,wind vertical velocity maximum in vicinity of 30km,wind vertical velocity maximum in vicinity of 30km,m/s,0,2,199
-,wind vertical velocity 98 percentile in vicinity of 30km,wind vertical velocity 98 percentile in vicinity of 30km,m/s,0,2,200
+,wind vertical velocity maximum in vicinity of 30km,Wind vertical velocity maximum in vicinity of 30km. If bounds are specified, the value is a maximum between them.,m/s,0,2,199
+,wind vertical velocity 98 percentile in vicinity of 30km,Wind vertical velocity 98 percentile in vicinity of 30km. If bounds are specified, the value is a maximum between them.,m/s,0,2,200
 ,geometric altitude above mean sea level,,m,0,3,192
 ,geometric height above ground level,,m,0,3,193
 1213,upward UV radiation,Ultaviolet radiation at the surface directed away from the ground.,W/m2,0,4,192
