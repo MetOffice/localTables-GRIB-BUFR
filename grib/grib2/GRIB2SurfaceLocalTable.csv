@@ -10,3 +10,7 @@ Code figure,Parameter,Unit
 200,Base of condensation trail formation,
 201,Top of persistence condensation trail formation,
 202,Base of persistence condensation trail formation,
+203,Level of maximum wind vertical velocity in vicinity of 30km,
+204,Level of 98th percentile wind vertical velocity in vicinity of 30km,
+
+
