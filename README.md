@@ -1,7 +1,7 @@
 
 ![](https://github.com/MetOffice/localTables-GRIB-BUFR/workflows/pre-commit/badge.svg)
 
-# Repository to manage the Met Office Local Table extensions to WMO BUFR and GRIB encoding data formats. 
+# Repository to manage the Met Office Local Table extensions to WMO BUFR and GRIB encoding data formats.
 
 Here you will find the GitHub repo for maintaining the Met Office Local Table extensions to the WMO BUFR and GRIB codes (http://codes.wmo.int/). These can be found at the following webpage: http://reference.metoffice.gov.uk/grib/_grib2 once published.
 
