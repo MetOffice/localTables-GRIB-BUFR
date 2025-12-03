@@ -75,7 +75,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,depth Max Current,The depth at which the maximum current occurs.,m,10,1,194
 150,non-tidal residual of sea level,,m,10,3,192
 ,water potential temperature (theta),Water potential temperature (theta) at surface,K,10,3,193
-,vertical velocity of thermal in boundary layer,m/s,0,2,201
+,vertical velocity of thermal in boundary layer,vertical velocity of thermal in boundary layer,m/s,0,2,201
 ,visibility of Ocean,"The Visibility of the Ocean, the light Secchi depth (1.7/Kd)",m,10,4,192
 ,visibility through dust,,m,0,19,192
 ,visibility at screen level in vicinity of 10km,,m,0,19,193
