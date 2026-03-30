@@ -15,6 +15,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,geometric height above ground level,,m,0,3,193
 1213,upward UV radiation,Ultaviolet radiation at the surface directed away from the ground.,W/m2,0,4,192
 9210,height of lowest cloud base greater than 2.5 oktas,Height of the base of the lowest cloud above sea level where there is at least 2.5 oktas (eighths) of cloud cover. This is also referred to as the altitude of the cloud base or (geometric) height above the geoid which is the reference geopotential surface.,kft,0,6,192
+,helicopter triggered lightning, Helicopter-triggered lightning occurs mainly over the North Sea in winter (October–April) often when there is little or no natural lightning—implying the helicopter itself triggers the strike. Output is 3 risk levels where 0=none 1=low 2=moderate 3=high.,Numeric,0,17,194
 9218,cloud amount below 1000 feet ASL,Fraction of horizontal grid square occupied by cloud below 1000 feet above sea level.,%,0,6,195
 20112,CAPE most unstable below 500hPa,CAPE (Convective Available Potential Energy) calculated for the most unstable parcel where the most unstable parcel is defined as the parcel with the highest fixed level CAPE launched from any level (including screen-level=1.5m) within 500hPa of the surface pressure.,J/kg,0,7,192
 20110,CAPE mixed layer in lowest 500m,CAPE (Convective Available Potential Energy) calculated for a mixed layer parcel where a mixed layer parcel is defined as a parcel with thermodynamic properties of the density-weighted mean of the lowest 500 m above ground level.,J/kg,0,7,193
@@ -47,6 +48,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,extreme precipitation rate in last 24 hours in vicinity of 30km,,kg/m2s,0,1,202
 ,precipitation rate in vicinity of 10km,,kg/m2s,0,1,203
 ,probability of precipitation as snow unsmoothed orography,The mean probability of precipitation falling as snow on unsmoothed orography.,%,0,1,204
+,probability of heatwave,A UK heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold. The threshold varies by UK county. This quantity is the probability of a heatwave.,1,0,0,194 
 ,diameter of hail stones,diameter of hail stones,m,0,1,205
 ,snow depth water equivalent change,snow depth water equivalent change,kg/m2,0,1,206
 ,convective rain rate unsmoothed orography,convective rain rate unsmoothed orography,kg/m2,0,1,207
