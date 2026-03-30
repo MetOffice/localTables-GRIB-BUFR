@@ -48,7 +48,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,extreme precipitation rate in last 24 hours in vicinity of 30km,,kg/m2s,0,1,202
 ,precipitation rate in vicinity of 10km,,kg/m2s,0,1,203
 ,probability of precipitation as snow unsmoothed orography,The mean probability of precipitation falling as snow on unsmoothed orography.,%,0,1,204
-,probability of heatwave,,1,0,0,194 
+,probability of heatwave,A UK heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold. The threshold varies by UK county. This quantity is the probability of a heatwave.,1,0,0,194 
 ,diameter of hail stones,diameter of hail stones,m,0,1,205
 ,snow depth water equivalent change,snow depth water equivalent change,kg/m2,0,1,206
 ,convective rain rate unsmoothed orography,convective rain rate unsmoothed orography,kg/m2,0,1,207
