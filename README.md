@@ -15,7 +15,7 @@ If you would like to request a new addition to the Met Office local tables, plea
 
 ## Workflows
 
-There are 2 automated work flows triggering repository actions:
+There are 2 automated work flows triggering repository actions: 
 
 * on Pull Request (and change to PR):
     * check-consistency
