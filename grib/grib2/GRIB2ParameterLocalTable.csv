@@ -37,7 +37,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,dust aerosol optical depth, Dust aerosol optical depth,1,0,20,201
 ,hazel pollen concentration,,m3,0,20,202
 ,alder pollen concentration,,m3,0,20,203
-,ash pollen concentration,m3,,0,20,204
+,ash pollen concentration,,m3,0,20,204
 ,birch pollen concentration,,m3,0,20,205
 ,oak pollen concentration,,m3,0,20,206
 ,plane pollen concentration,,m3,0,20,207
