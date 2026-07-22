@@ -35,14 +35,14 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 436,dust mass mixing ratio (10.0-30.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 10.0 - 30.0 microns in diameter.,kg/kg,0,20,199
 ,dust mass concentration, Dust mass concentration, kg/m3,0,20,200
 ,dust aerosol optical depth, Dust aerosol optical depth,1,0,20,201
-,hazel pollen concentration,,m3,0,20,202
-,alder pollen concentration,,m3,0,20,203
-,ash pollen concentration,,m3,0,20,204
-,birch pollen concentration,,m3,0,20,205
-,oak pollen concentration,,m3,0,20,206
-,plane pollen concentration,,m3,0,20,207
-,grass pollen concentration,,m3,0,20,208
-,nettle pollen concentration,,m3,0,20,209
+,hazel pollen concentration,Concentration is the number count per m3.,/m3,0,20,202
+,alder pollen concentration,Concentration is the number count per m3.,/m3,0,20,203
+,ash pollen concentration,Concentration is the number count per m3.,/m3,0,20,204
+,birch pollen concentration,Concentration is the number count per m3.,/m3,0,20,205
+,oak pollen concentration,Concentration is the number count per m3.,/m3,0,20,206
+,plane pollen concentration,Concentration is the number count per m3.,/m3,0,20,207
+,grass pollen concentration,Concentration is the number count per m3.,/m3,0,20,208
+,nettle pollen concentration,Concentration is the number count per m3.,/m3,0,20,209
 ,hazel pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,210
 ,alder pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,211
 ,ash pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,212
