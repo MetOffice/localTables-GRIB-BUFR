@@ -35,6 +35,23 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 436,dust mass mixing ratio (10.0-30.0 microns),Mass mixing ratio representing the mass of dust in a unit mass of air. Particles in the range 10.0 - 30.0 microns in diameter.,kg/kg,0,20,199
 ,dust mass concentration, Dust mass concentration, kg/m3,0,20,200
 ,dust aerosol optical depth, Dust aerosol optical depth,1,0,20,201
+,hazel pollen concentration,,m3,0,20,202
+,alder pollen concentration,,m3,0,20,203
+,ash pollen concentration,,m3,0,20,204
+,birch pollen concentration,,m3,0,20,205
+,oak pollen concentration,,m3,0,20,206
+,plane pollen concentration,,m3,0,20,207
+,grass pollen concentration,,m3,0,20,208
+,nettle pollen concentration,,m3,0,20,209
+,hazel pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,210
+,alder pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,211
+,ash pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,212
+,birch pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,213
+,oak pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,214
+,plane pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,215
+,grass pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,216
+,nettle pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,217
+,pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,218
 21104,total lightning flash density,,m-2 s-1,0,17,192
 ,large scale rain rate unsmoothed orography,large scale rain rate unsmoothed orography,kg/m2s,0,1,193
 ,large scale snowfall rate water equivalent unsmoothed orography,large scale snowfall rate water equivalent unsmoothed orography,kg/m2s,0,1,194
