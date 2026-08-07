@@ -68,8 +68,8 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,probability of heatwave,A UK heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold. The threshold varies by UK county. This quantity is the probability of a heatwave.,1,0,0,194 
 ,diameter of hail stones,diameter of hail stones,m,0,1,205
 ,snow depth water equivalent change,snow depth water equivalent change,kg/m2,0,1,206
-,convective rain rate unsmoothed orography,convective rain rate unsmoothed orography,kg/m2,0,1,207
-,total convective snowfall rate water equivalent unsmoothed orography,total convective snowfall rate water equivalent unsmoothed orography,kg/m2,0,1,208
+,convective rain rate unsmoothed orography,convective rain rate unsmoothed orography,kg/m2s,0,1,207
+,total convective snowfall rate water equivalent unsmoothed orography,total convective snowfall rate water equivalent unsmoothed orography,kg/m2s,0,1,208
 3318,leaf area index of primary deciduous trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,192
 3318,leaf area index of primary evergreen trees,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,193
 3318, leaf area index of natural grasses of C3 plant functional types,Leaf Area Index is a measure for the total area of leaves per unit ground area and directly related to the amount of light that can be intercepted by plants.,1,2,0,194
