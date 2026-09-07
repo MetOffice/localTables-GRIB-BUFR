@@ -41,7 +41,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,oak pollen concentration,Concentration is the number count per m3.,/m3,0,20,206
 ,plane pollen concentration,Concentration is the number count per m3.,/m3,0,20,207
 ,grass pollen concentration,Concentration is the number count per m3.,/m3,0,20,208
-,nettle pollen concentration,Concentration is the number count per m3.,/m3,0,20,209
+,weed pollen concentration,Concentration is the number count per m3.,/m3,0,20,209
 ,hazel pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,210
 ,alder pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,211
 ,ash pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,212
@@ -49,7 +49,7 @@ STASH code,Parameter,Description,Unit,Discipline,Category,Number
 ,oak pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,214
 ,plane pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,215
 ,grass pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,216
-,nettle pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,217
+,weed pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,217
 ,pollen index,Daily Pollen Index provides a numerical value for categorising pollen 0=None 1=Low 2=Moderate 3=High 4=Very High,Numeric,0,20,218
 21104,total lightning flash density,,m-2 s-1,0,17,192
 ,large scale rain rate unsmoothed orography,large scale rain rate unsmoothed orography,kg/m2s,0,1,193
